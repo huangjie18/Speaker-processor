@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"..\obj\main.o"
+"..\obj\stm32f10x_it.o"
+"..\obj\system_stm32f10x.o"
+"..\obj\core_cm3.o"
+"..\obj\startup_stm32f10x_hd.o"
+"..\obj\stm32f10x_gpio.o"
+"..\obj\stm32f10x_rcc.o"
+"..\obj\misc.o"
+"..\obj\stm32f10x_usart.o"
+"..\obj\stm32f10x_fsmc.o"
+"..\obj\delay.o"
+"..\obj\sys.o"
+"..\obj\usart.o"
+"..\obj\ili93xx.o"
+"..\obj\guiconf.o"
+"..\obj\guidrv_template.o"
+"..\obj\lcdconf_flexcolor_template.o"
+"..\obj\gui_x.o"
+"..\STemWin\Lib\STemWin526_CM3_Keil.lib"
+"..\obj\malloc.o"
+--strict --scatter "..\OBJ\Processor.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Processor.map" -o ..\OBJ\Processor.axf
