@@ -33,7 +33,11 @@ static void LCD_GPIO_Config(void)
 	 * data lines,FSMC-D0~D15: PD 14 15 0 1,PE 7 8 9 10 11 12 13 14 15,PD 8 9 10
 	 */	
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	#if FSMC_Enable
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	#else
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	#endif
     
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_8 | GPIO_Pin_9 | 
                                   GPIO_Pin_10 | GPIO_Pin_14 | GPIO_Pin_15;
@@ -69,7 +73,7 @@ static void LCD_GPIO_Config(void)
 	GPIO_SetBits(GPIOD, GPIO_Pin_11);		 // RS
     GPIO_SetBits(GPIOD, GPIO_Pin_7);		 //	CS = 1
 
-	GPIO_SetBits(GPIOD, GPIO_Pin_13);	 	 //	BL = 1 
+//	GPIO_SetBits(GPIOD, GPIO_Pin_13);	 	 //	BL = 1 
 		
 }
 
@@ -85,8 +89,6 @@ static void LCD_FSMC_Config(void)
 {
     FSMC_NORSRAMInitTypeDef  FSMC_NORSRAMInitStructure;
     FSMC_NORSRAMTimingInitTypeDef  p; 
-	FSMC_NORSRAMTimingInitTypeDef  readWriteTiming; 
-	FSMC_NORSRAMTimingInitTypeDef  writeTiming;
     /* Enable the FSMC Clock */
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
     
@@ -119,46 +121,47 @@ static void LCD_FSMC_Config(void)
     /* Enable FSMC Bank1_SRAM Bank */
     FSMC_NORSRAMCmd(FSMC_Bank1_NORSRAM1, ENABLE); 
 
-
-	  
-	
+//	FSMC_NORSRAMInitTypeDef  FSMC_NORSRAMInitStructure;
+//  FSMC_NORSRAMTimingInitTypeDef  readWriteTiming; 
+//	FSMC_NORSRAMTimingInitTypeDef  writeTiming;
+//	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
 //	  readWriteTiming.FSMC_AddressSetupTime = 0x01;	 //地址建立时间（ADDSET）为2个HCLK 1/36M=27ns
-//	  readWriteTiming.FSMC_AddressHoldTime = 0x00;	 //地址保持时间（ADDHLD）模式A未用到	
-//	  readWriteTiming.FSMC_DataSetupTime = 0x0f;		 // 数据保存时间为16个HCLK,因为液晶驱动IC的读数据的时候，速度不能太快，尤其对1289这个IC。
-//	  readWriteTiming.FSMC_BusTurnAroundDuration = 0x00;
-//	  readWriteTiming.FSMC_CLKDivision = 0x00;
-//	  readWriteTiming.FSMC_DataLatency = 0x00;
-//	  readWriteTiming.FSMC_AccessMode = FSMC_AccessMode_A;	 //模式A 
+//	readWriteTiming.FSMC_AddressHoldTime = 0x00;	 //地址保持时间（ADDHLD）模式A未用到	
+//	readWriteTiming.FSMC_DataSetupTime = 0x0f;		 // 数据保存时间为16个HCLK,因为液晶驱动IC的读数据的时候，速度不能太快，尤其对1289这个IC。
+//	readWriteTiming.FSMC_BusTurnAroundDuration = 0x00;
+//	readWriteTiming.FSMC_CLKDivision = 0x00;
+//	readWriteTiming.FSMC_DataLatency = 0x00;
+//	readWriteTiming.FSMC_AccessMode = FSMC_AccessMode_A;	 //模式A 
 //		
-
+//	
 //		writeTiming.FSMC_AddressSetupTime = 0x00;	 //地址建立时间（ADDSET）为1个HCLK  
-//	  writeTiming.FSMC_AddressHoldTime = 0x00;	 //地址保持时间（A		
-//	  writeTiming.FSMC_DataSetupTime = 0x03;		 ////数据保存时间为4个HCLK	
-//	  writeTiming.FSMC_BusTurnAroundDuration = 0x00;
-//	  writeTiming.FSMC_CLKDivision = 0x00;
-//	  writeTiming.FSMC_DataLatency = 0x00;
-//	  writeTiming.FSMC_AccessMode = FSMC_AccessMode_A;	 //模式A 
+//	writeTiming.FSMC_AddressHoldTime = 0x00;	 //地址保持时间（A		
+//	writeTiming.FSMC_DataSetupTime = 0x03;		 ////数据保存时间为4个HCLK	
+//	writeTiming.FSMC_BusTurnAroundDuration = 0x00;
+//	writeTiming.FSMC_CLKDivision = 0x00;
+//	writeTiming.FSMC_DataLatency = 0x00;
+//	writeTiming.FSMC_AccessMode = FSMC_AccessMode_A;	 //模式A 
+//	
+//	
+//	FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;//  这里我们使用NE4 ，也就对应BTCR[6],[7]。
+//	FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable; // 不复用数据地址
+//	FSMC_NORSRAMInitStructure.FSMC_MemoryType =FSMC_MemoryType_SRAM;// FSMC_MemoryType_SRAM;  //SRAM   
+//	FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b;//存储器数据宽度为16bit   
+//	FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode =FSMC_BurstAccessMode_Disable;// FSMC_BurstAccessMode_Disable; 
+//	FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
+//		FSMC_NORSRAMInitStructure.FSMC_AsynchronousWait=FSMC_AsynchronousWait_Disable; 
+//	FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;   
+//	FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;  
+//	FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;	//  存储器写使能
+//	FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;   
+//	FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Enable; // 读写使用不同的时序
+//	FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable; 
+//	FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &readWriteTiming; //读写时序
+//	FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &writeTiming;  //写时序
+//	
+//	FSMC_NORSRAMInit(&FSMC_NORSRAMInitStructure);  //初始化FSMC配置
 
-//	 
-//	  FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;//  这里我们使用NE4 ，也就对应BTCR[6],[7]。
-//	  FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable; // 不复用数据地址
-//	  FSMC_NORSRAMInitStructure.FSMC_MemoryType =FSMC_MemoryType_SRAM;// FSMC_MemoryType_SRAM;  //SRAM   
-//	  FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b;//存储器数据宽度为16bit   
-//	  FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode =FSMC_BurstAccessMode_Disable;// FSMC_BurstAccessMode_Disable; 
-//	  FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
-//	  FSMC_NORSRAMInitStructure.FSMC_AsynchronousWait=FSMC_AsynchronousWait_Disable; 
-//	  FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;   
-//	  FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;  
-//	  FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;	//  存储器写使能
-//	  FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;   
-//	  FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Enable; // 读写使用不同的时序
-//	  FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable; 
-//	  FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &readWriteTiming; //读写时序
-//	  FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &writeTiming;  //写时序
-
-//	  FSMC_NORSRAMInit(&FSMC_NORSRAMInitStructure);  //初始化FSMC配置
-
-// 	  FSMC_NORSRAMCmd(FSMC_Bank1_NORSRAM1, ENABLE);  // 使能BANK1 
+// 	FSMC_NORSRAMCmd(FSMC_Bank1_NORSRAM1, ENABLE);  // 使能BANK1 
 }
 
 void WriteComm(u16 CMD)
@@ -212,7 +215,7 @@ void WriteData(u16 tem_data)
 {
 	u8 i;
 	u8 temp1;
-	LCD_RS = 0;
+	LCD_RS = 1;
 	LCD_RD = 1;
 	LCD_CS = 0;
 	LCD_WR = 1;
@@ -347,6 +350,9 @@ void Lcd_Initialize(void)
 	WriteData(0x31);
 	WriteData(0x37);
 	WriteData(0x3C);
+	//修改
+
+
 
 	//gamma  GREEN
 	WriteComm(0xE2);
@@ -433,6 +439,17 @@ void Lcd_Initialize(void)
 
 
 }
+/******************************************
+函数名：Lcd写命令函数
+功能：向Lcd指定位置写入应有命令或数据
+入口参数：Index 要寻址的寄存器地址
+          ConfigTemp 写入的数据或命令值
+******************************************/
+void LCD_WR_REG_RAM(u16 Index,u16 CongfigTemp)
+{
+	*(__IO u16 *) (Bank1_LCD_C) = Index;	
+	*(__IO u16 *) (Bank1_LCD_D) = CongfigTemp;
+}
 
 /**********************************************
 函数名：Lcd全屏擦除函数
@@ -443,21 +460,13 @@ void Lcd_Initialize(void)
 void Lcd_Clear(u16 Color)
 {
 	u32 temp;
-	WriteComm(0x2C);
-	if((Color>>8)==(Color&0x00ff))
+	BlockWrite(0,400,0,240);
+
+	for (temp = 0; temp < 96000; temp++)
 	{
-		for (temp = 0; temp < 76800*2-1; temp++)
-		{
-			WriteData(0);
-		}
-	}	
-	else
-	{
-		for (temp = 0; temp < 76800; temp++)
-		{
-			WriteData(0);
-		}
+		WriteData(Color);
 	}
+
 
 }
 /**********************************************
@@ -471,14 +480,14 @@ void BlockWrite(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsign
 	WriteComm(0x2a);   
 	WriteData(Xstart>>8);
 	WriteData(Xstart&0xff);
-	WriteData(Xend>>8);
-	WriteData(Xend&0xff);
+	WriteData((Xend)>>8);
+	WriteData((Xend)&0xff);
 
 	WriteComm(0x2b);   
 	WriteData(Ystart>>8);
 	WriteData(Ystart&0xff);
-	WriteData(Yend>>8);
-	WriteData(Yend&0xff);
+	WriteData((Yend)>>8);
+	WriteData((Yend)&0xff);
 	
 	WriteComm(0x2c);
 }
@@ -494,45 +503,74 @@ void DrawPixel(u16 x,u16 y, int Color)
 	*(__IO u16 *)(Bank1_LCD_D) = Color;
 }
 
+//读LCD数据
+//返回值:读到的值
+u16 LCD_RD_DATA(void)
+{
+	vu16 ram;			//防止被优化
+	ram=*(__IO u16 *) (Bank1_LCD_D);	
+	return ram;	 
+}
+//当mdk -O1时间优化时需要设置
+//延时i
+void opt_delay(u8 i)
+{
+	while(i--);
+}
 /**********************************************
-函数名：DrawPixel打点函数
-功能：将Lcd一个点擦为指定颜色
+函数名：DrawPixel读点函数
+功能：读取Lcd一个点指定颜色
 入口参数：x的位置，y的位置，color 指定Lcd全屏颜色 RGB(5-6-5)
 返回值：无
 ***********************************************/
 u16 GetPoint(u16 x, u16 y)
 {
-	volatile u16 a;
+	u16 r;
+	u16 b;
+	u16 g;
 	WriteComm(0x2a);   
 	WriteData(x>>8);
 	WriteData(x&0xff);
-	WriteData((x+1)>>8);
-	WriteData((x+1)&0xff);
+	WriteData((x)>>8);
+	WriteData((x)&0xff);
 
 	WriteComm(0x2b);   
 	WriteData(y>>8);
 	WriteData(y&0xff);
-	WriteData((y+1)>>8);
-	WriteData((y+1)&0xff);
+	WriteData((y)>>8);
+	WriteData((y)&0xff);
 	
 	WriteComm(0x2E);
 	
-	a = *(__IO u16 *) (Bank1_LCD_D);
-	a = *(__IO u16 *) (Bank1_LCD_D);
-	a = (a&0xf800)|((a&0x00fc)<<3)|((*(__IO u16 *) (Bank1_LCD_D))>>11);
-	return a;
+	r = *(__IO u16 *) (Bank1_LCD_D);
+	r = *(__IO u16 *) (Bank1_LCD_D);
+	b = *(__IO u16 *) (Bank1_LCD_D);
+
+//	g = r&0xff;
+//	g <<= 8;
+	r = (r&0xf800)|((r&0x00fc)<<3)|((b)>>11);
+//	r = ((r>>11)<<11)|((g>>10)<<5)|(b>>11);
+	return r;
+
+	
+
 }
 
+
 /*************************************************
-函数名：Lcd光标起点定位函数
-功能：指定320240液晶上的一点作为写数据的起始点
-入口参数：x 坐标 0~239
-          y 坐标 0~319
+函数名：Lcd_ColorBox
+功能：对指定区域填充颜色
+入口参数：x 坐标 
+          y 坐标 
 返回值：无
 *************************************************/
-void Lcd_SetCursor(u16 x,u16 y)
-{ 
-	//坐标调转
-	LCD_WR_REG_DATA(0x20,y);//水平坐标
-	LCD_WR_REG_DATA(0x21,x);//垂直坐标  
+void Lcd_ColorBox(u16 xStart,u16 yStart,u16 xLong,u16 yLong,u16 Color)
+{
+	u32 temp;
+
+	BlockWrite(xStart,xStart+xLong-1,yStart,yStart+yLong-1);
+	for (temp=0; temp<xLong*yLong; temp++)
+	{
+		*(__IO u16 *) (Bank1_LCD_D) = Color;
+	}
 }

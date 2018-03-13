@@ -1,13 +1,24 @@
 #ifndef __LCD_H
 #define __LCD_H
+
+//驱动为9341
 #include "sys.h"
 
 #define FSMC_Enable  1   //是否使用FSMC
 //硬件相关的子函数
+typedef struct 
+{
+	vu16 LCD_CMD;
+}LCD_Typedef;
 
+typedef struct 
+{
+	vu16 LCD_DATA;
+}LCD_Typedef_data;
 #define Bank1_LCD_D    ((u32)0x60020000)    //Disp Data ADDR
 #define Bank1_LCD_C    ((u32)0x60000000)	   //Disp Reg ADDR
-
+#define LCD_REG        ((LCD_Typedef*)Bank1_LCD_C)
+#define LCD_RAM        ((LCD_Typedef_data*)Bank1_LCD_D)
 
 #define LCD_RST  PDout(12)
 #define LCD_WR   PDout(5)
@@ -49,5 +60,7 @@ void DrawPixel(u16 x, u16 y, int Color);
 u16 GetPoint(u16 x, u16 y);
 void Lcd_SetCursor(u16 x,u16 y);
 void WriteComm(u16 CMD);
- void WriteData(u16 tem_data);
+void WriteData(u16 tem_data);
+void Lcd_ColorBox(u16 xStart,u16 yStart,u16 xLong,u16 yLong,u16 Color);
+u16 LCD_RD_DATA(void);
 #endif

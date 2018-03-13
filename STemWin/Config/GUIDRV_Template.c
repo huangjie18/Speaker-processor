@@ -141,32 +141,32 @@ static void _SetPixelIndex(GUI_DEVICE * pDevice, int x, int y, int PixelIndex) {
     //
     // Convert logical into physical coordinates (Dep. on LCDConf.h)
     //
-//    #if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
-//      int xPhys, yPhys;
+    #if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
+      int xPhys, yPhys;
 
-//      xPhys = LOG2PHYS_X(x, y);
-//      yPhys = LOG2PHYS_Y(x, y);
-//    #else
-//      #define xPhys x
-//      #define yPhys y
-//    #endif
-//    GUI_USE_PARA(pDevice);
-//    GUI_USE_PARA(x);
-//    GUI_USE_PARA(y);
-//    GUI_USE_PARA(PixelIndex);
-//    {
-//      //
-//      // Write into hardware ... Adapt to your system
-//      //
-//      // TBD by customer...
-//      //
-//		 DrawPixel(x,y,PixelIndex);
-//    }
-//    #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
-//      #undef xPhys
-//      #undef yPhys
-//    #endif
-	DrawPixel(x,y,PixelIndex);
+      xPhys = LOG2PHYS_X(x, y);
+      yPhys = LOG2PHYS_Y(x, y);
+    #else
+      #define xPhys x
+      #define yPhys y
+    #endif
+    GUI_USE_PARA(pDevice);
+    GUI_USE_PARA(x);
+    GUI_USE_PARA(y);
+    GUI_USE_PARA(PixelIndex);
+    {
+      //
+      // Write into hardware ... Adapt to your system
+      //
+      // TBD by customer...
+      //
+		 DrawPixel(x,y,PixelIndex);
+    }
+    #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
+      #undef xPhys
+      #undef yPhys
+    #endif
+//	DrawPixel(x,y,PixelIndex);
 }
 
 /*********************************************************************
@@ -207,7 +207,9 @@ static unsigned int _GetPixelIndex(GUI_DEVICE * pDevice, int x, int y) {
       #undef xPhys
       #undef yPhys
     #endif
-  return PixelIndex;
+//	  PixelIndex = GetPoint(x,y);
+	  return PixelIndex;
+
 }
 
 /*********************************************************************
@@ -248,7 +250,6 @@ static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
 	u32 temp1;	  //Program Size: Code=45980 RO-data=18328 RW-data=816 ZI-data=14704
 	u32 temp=(x1-x0+1)*(y1-y0+1);
 	BlockWrite(x0,x1,y0,y1);
-	
 	for (temp1 = 0; temp1 < temp; temp1++)
 	{
 		*(__IO u16 *) (Bank1_LCD_D) = LCD_COLORINDEX;
@@ -511,16 +512,33 @@ static void _DrawBitLine16BPP(GUI_DEVICE * pDevice, int x, int y, U16 const GUI_
 //    _SetPixelIndex(pDevice, x, y, *p);
 //  }
 	LCD_PIXELINDEX Index;
-	Lcd_SetCursor(x,y);
+
+	///////////////
+     /* 这个速度慢 */
+//    for (; xsize > 0; xsize--, x++, p++)
+//    {
+//      Index = *p;
+//	  	DrawPixel(x, y, Index);   //用这个速度会变慢
+//    }
+	////////////
+	//加快速度
+	WriteComm(0x2a);   
+	WriteData(x>>8);
+	WriteData(x&0xff);
+	WriteData((x+xsize-1)>>8);
+	WriteData((x+xsize-1)&0xff);
+	WriteComm(0x2b);   
+	WriteData(y>>8);
+	WriteData(y&0xff);
+	WriteData(y>>8);
+	WriteData(y&0xff);
 	WriteComm(0x2c);
+	///////////////
      /* Handle transparent bitmap */
     for (; xsize > 0; xsize--, x++, p++)
     {
       Index = *p;
-      if (Index)
-      {
-		*(__IO u16 *)(Bank1_LCD_D) = Index;
-      }
+		*(__IO u16 *) (Bank1_LCD_D) = Index;  //加快速度
     }
   
 }

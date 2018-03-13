@@ -1,0 +1,11 @@
+..\obj\test.o: ..\HARDWARE\Test\test.c
+..\obj\test.o: ..\HARDWARE\Test\test.h
+..\obj\test.o: ..\STemWin\inc\GUI.h
+..\obj\test.o: ..\STemWin\inc\GUI_ConfDefaults.h
+..\obj\test.o: ..\STemWin\Config\GUIConf.h
+..\obj\test.o: ..\STemWin\inc\GUI_Type.h
+..\obj\test.o: ..\STemWin\inc\LCD.h
+..\obj\test.o: ..\STemWin\inc\Global.h
+..\obj\test.o: ..\STemWin\inc\GUI_Version.h
+..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

@@ -369,7 +369,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\USER;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LCD;..\STemWin\Config;..\STemWin\inc;..\MALLOC</IncludePath>
+              <IncludePath>..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\USER;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LCD;..\STemWin\Config;..\STemWin\inc;..\MALLOC;..\HARDWARE\TIMER;..\STemWin\Demo;..\HARDWARE\Test</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -472,6 +472,11 @@
               <FileType>1</FileType>
               <FilePath>..\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f10x_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -502,6 +507,16 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\LCD\ILI93xx.c</FilePath>
             </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\TIMER\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Test\test.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -526,6 +541,11 @@
               <FileName>GUI_X.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STemWin\OS\GUI_X.c</FilePath>
+            </File>
+            <File>
+              <FileName>GUI_X_Touch_Analog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STemWin\Config\GUI_X_Touch_Analog.c</FilePath>
             </File>
           </Files>
         </Group>

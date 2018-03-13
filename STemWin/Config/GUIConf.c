@@ -67,7 +67,7 @@ Purpose     : Display controller initialization
 
 //自己修改的代码
 #define USE_EXRAM  0//不使用外部SRAM
-#define GUI_NUMBYTES  (10*1024) //设置STemWin内存大小
+#define GUI_NUMBYTES  MEM1_MAX_SIZE //设置STemWin内存大小
 #define GUI_BLOCKSIZE 0X80  //块大小
 /*********************************************************************
 *
