@@ -32,8 +32,7 @@ int main(void)
 	u16 rbg;
 	delay_init(72);
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-	Lcd_Initialize();
-	LCD_BL = 1; //背光灯开
+//	Lcd_Initialize(); //初始化
 	TIM3_Int_Init(999,71);	//1KHZ 定时器1ms 
 	my_mem_init(SRAMIN);
 
@@ -46,8 +45,6 @@ int main(void)
 //	GUI_Clear();   //清屏
 //	GUI_SetFont(&GUI_Font24B_ASCII);
 //	GUI_DispStringAt("Hello Word!",0,0);
-	GUI_AA_EnableHiRes();
-	GUI_AA_SetFactor(4);
 	MainTask();
 
 	while(1)

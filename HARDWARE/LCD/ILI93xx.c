@@ -436,6 +436,8 @@ void Lcd_Initialize(void)
 	delay_ms(120);
 
 	WriteComm(0x29);//Display on
+	
+	LCD_BL = 1; //±³¹âµÆ¿ª
 
 
 }

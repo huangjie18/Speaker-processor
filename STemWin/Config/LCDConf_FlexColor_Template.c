@@ -53,7 +53,10 @@ Purpose     : Display controller configuration (single layer)
 
 #include "GUI.h"
 #include "GUIDRV_FlexColor.h"
+#include "ILI93xx.h"
 
+
+#define Drive_LCD  0   //1使用正点原子例程，0使用野火例程
 /*********************************************************************
 *
 *       Layer configuration (to be modified)
@@ -64,9 +67,13 @@ Purpose     : Display controller configuration (single layer)
 //
 // Physical display size
 //
-#define XSIZE_PHYS  400 // To be adapted to x-screen size
-#define YSIZE_PHYS  240 // To be adapted to y-screen size
-
+#if Drive_LCD
+	#define XSIZE_PHYS  400 // To be adapted to x-screen size
+	#define YSIZE_PHYS  240 // To be adapted to y-screen size
+#else
+	#define XSIZE_PHYS  240 // To be adapted to x-screen size
+	#define YSIZE_PHYS  400 
+#endif
 /*********************************************************************
 *
 *       Configuration checking
@@ -107,6 +114,7 @@ Purpose     : Display controller configuration (single layer)
 */
 static void LcdWriteReg(U16 Data) {
   // ... TBD by user
+	*(__IO u16 *) (Bank1_LCD_C) = Data;
 }
 
 /********************************************************************
@@ -118,6 +126,7 @@ static void LcdWriteReg(U16 Data) {
 */
 static void LcdWriteData(U16 Data) {
   // ... TBD by user
+	*(__IO u16 *) (Bank1_LCD_D) = Data;
 }
 
 /********************************************************************
@@ -130,6 +139,7 @@ static void LcdWriteData(U16 Data) {
 static void LcdWriteDataMultiple(U16 * pData, int NumItems) {
   while (NumItems--) {
     // ... TBD by user
+	  *(__IO u16 *) (Bank1_LCD_D) = *pData++;
   }
 }
 
@@ -143,6 +153,7 @@ static void LcdWriteDataMultiple(U16 * pData, int NumItems) {
 static void LcdReadDataMultiple(U16 * pData, int NumItems) {
   while (NumItems--) {
     // ... TBD by user
+	  *pData++ = *(__IO u16 *) (Bank1_LCD_D);
   }
 }
 
@@ -161,6 +172,8 @@ static void LcdReadDataMultiple(U16 * pData, int NumItems) {
 *   display driver configuration.
 *
 */
+#if Drive_LCD
+//正点原子例程所用，可以配置STemwin中没有的LCD驱动
 void LCD_X_Config(void) {
   GUI_DEVICE * pDevice;
   CONFIG_FLEXCOLOR Config = {0};
@@ -168,7 +181,25 @@ void LCD_X_Config(void) {
   //
   // Set display driver and color conversion
   //
-  GUI_DEVICE_CreateAndLink(&GUIDRV_Template_API, GUICC_M565, 0, 0);
+  //在GUIDRV_Template.c中配置自己所属的LCD驱动
+  pDevice=GUI_DEVICE_CreateAndLink(GUIDRV_TEMPLATE, GUICC_M565, 0, 0);//正点原子例程所用
+  //
+  // Display driver configuration, required for Lin-driver
+  //
+  LCD_SetSizeEx (0, XSIZE_PHYS , YSIZE_PHYS);
+  LCD_SetVSizeEx(0, VXSIZE_PHYS, VYSIZE_PHYS);
+
+}
+#else
+//野火例程所用，配置STemwin可支持的LCD驱动
+void LCD_X_Config(void) {
+  GUI_DEVICE * pDevice;
+  CONFIG_FLEXCOLOR Config = {0};
+  GUI_PORT_API PortAPI = {0};
+  //
+  // Set display driver and color conversion
+  //
+  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR,GUICC_M565, 0, 0);//野火例程所用
   //
   // Display driver configuration, required for Lin-driver
   //
@@ -177,18 +208,24 @@ void LCD_X_Config(void) {
   //
   // Orientation
   //
-//  Config.Orientation = GUI_SWAP_XY | GUI_MIRROR_Y;
-//  GUIDRV_FlexColor_Config(pDevice, &Config);
-//  //
+  Config.FirstCOM = 0;                                          //modify by fire
+  Config.FirstSEG = 0;                                          //modify by fire  
+  Config.Orientation = GUI_SWAP_XY | GUI_MIRROR_X;					    //modify by fire  横屏		
+//  Config.NumDummyReads = 2;                                     //modify by fire 使用于ILI9341，其它根据情况是否注销掉
+
+  GUIDRV_FlexColor_Config(pDevice, &Config);
+  //以下代码必须要，设置颜色读取格式，第三种格式才符合
+  GUIDRV_FlexColor_SetReadFunc66709_B16(pDevice,GUIDRV_FLEXCOLOR_READ_FUNC_III);
+
 //  // Set controller and operation mode
 //  //
-//  PortAPI.pfWrite16_A0  = LcdWriteReg;
-//  PortAPI.pfWrite16_A1  = LcdWriteData;
-//  PortAPI.pfWriteM16_A1 = LcdWriteDataMultiple;
-//  PortAPI.pfReadM16_A1  = LcdReadDataMultiple;
-//  GUIDRV_FlexColor_SetFunc(pDevice, &PortAPI, GUIDRV_FLEXCOLOR_F66708, GUIDRV_FLEXCOLOR_M16C0B16);
+  PortAPI.pfWrite16_A0  = LcdWriteReg;
+  PortAPI.pfWrite16_A1  = LcdWriteData;
+  PortAPI.pfWriteM16_A1 = LcdWriteDataMultiple;
+  PortAPI.pfReadM16_A1  = LcdReadDataMultiple;
+  GUIDRV_FlexColor_SetFunc(pDevice, &PortAPI, GUIDRV_FLEXCOLOR_F66709, GUIDRV_FLEXCOLOR_M16C0B16);
 }
-
+#endif
 /*********************************************************************
 *
 *       LCD_X_DisplayDriver
@@ -224,6 +261,7 @@ int LCD_X_DisplayDriver(unsigned LayerIndex, unsigned Cmd, void * pData) {
     // to be adapted by the customer...
     //
     // ...
+	  	Lcd_Initialize();
     return 0;
   }
   default:
