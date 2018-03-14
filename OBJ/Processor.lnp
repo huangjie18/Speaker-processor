@@ -16,6 +16,7 @@
 "..\obj\ili93xx.o"
 "..\obj\timer.o"
 "..\obj\test.o"
+"..\obj\example.o"
 "..\obj\guiconf.o"
 "..\obj\guidrv_template.o"
 "..\obj\lcdconf_flexcolor_template.o"

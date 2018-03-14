@@ -517,6 +517,11 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\Test\test.c</FilePath>
             </File>
+            <File>
+              <FileName>example.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Test\example.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
