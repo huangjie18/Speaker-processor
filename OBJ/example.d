@@ -1,6 +1,5 @@
 ..\obj\example.o: ..\HARDWARE\Test\example.c
 ..\obj\example.o: ..\HARDWARE\Test\example.h
-..\obj\example.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\example.o: ..\STemWin\inc\GUI.h
 ..\obj\example.o: ..\STemWin\inc\GUI_ConfDefaults.h
 ..\obj\example.o: ..\STemWin\Config\GUIConf.h
@@ -8,3 +7,4 @@
 ..\obj\example.o: ..\STemWin\inc\LCD.h
 ..\obj\example.o: ..\STemWin\inc\Global.h
 ..\obj\example.o: ..\STemWin\inc\GUI_Version.h
+..\obj\example.o: ..\STemWin\Config\LCDConf.h

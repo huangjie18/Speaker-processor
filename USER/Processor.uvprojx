@@ -369,7 +369,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\USER;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LCD;..\STemWin\Config;..\STemWin\inc;..\MALLOC;..\HARDWARE\TIMER;..\STemWin\Demo;..\HARDWARE\Test</IncludePath>
+              <IncludePath>..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\USER;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LCD;..\STemWin\Config;..\STemWin\inc;..\MALLOC;..\HARDWARE\TIMER;..\STemWin\Demo;..\HARDWARE\Test;..\HARDWARE\InterFace;..\HARDWARE\LED;..\HARDWARE\KEY</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -522,6 +522,16 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\Test\example.c</FilePath>
             </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\LED\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\KEY\key.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -558,9 +568,9 @@
           <GroupName>STemWin_LIB</GroupName>
           <Files>
             <File>
-              <FileName>STemWin526_CM3_Keil.lib</FileName>
+              <FileName>STemWin532_CM3_Keil.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>..\STemWin\Lib\STemWin526_CM3_Keil.lib</FilePath>
+              <FilePath>..\STemWin\Lib\STemWin532_CM3_Keil.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -574,6 +584,41 @@
               <FileName>malloc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\MALLOC\malloc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Interface</GroupName>
+          <Files>
+            <File>
+              <FileName>IN_GainDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\IN_GainDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>NoiseGateDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\NoiseGateDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>IN_AuxMixerGainDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\IN_AuxMixerGainDLG.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Interface_Out</GroupName>
+          <Files>
+            <File>
+              <FileName>OUT_DelayDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\OUT_DelayDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>OUT_LimiterDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\OUT_LimiterDLG.c</FilePath>
             </File>
           </Files>
         </Group>

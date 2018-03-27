@@ -252,8 +252,14 @@ static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
 	BlockWrite(x0,x1,y0,y1);
 	for (temp1 = 0; temp1 < temp; temp1++)
 	{
+		#if FSMC_Enable  //使用FSMC
 		*(__IO u16 *) (Bank1_LCD_D) = LCD_COLORINDEX;
+		#else
+		WriteData(LCD_COLORINDEX);
+		#endif
 	}
+
+
 }
 
 /*********************************************************************
@@ -537,8 +543,12 @@ static void _DrawBitLine16BPP(GUI_DEVICE * pDevice, int x, int y, U16 const GUI_
      /* Handle transparent bitmap */
     for (; xsize > 0; xsize--, x++, p++)
     {
-      Index = *p;
+        Index = *p;
+	    #if FSMC_Enable  //使用FSMC
 		*(__IO u16 *) (Bank1_LCD_D) = Index;  //加快速度
+		#else
+		WriteData(Index);
+		#endif
     }
   
 }

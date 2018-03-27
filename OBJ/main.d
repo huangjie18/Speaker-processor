@@ -64,3 +64,5 @@
 ..\obj\main.o: ..\STemWin\inc\LISTVIEW.h
 ..\obj\main.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\main.o: ..\HARDWARE\Test\test.h
+..\obj\main.o: ..\HARDWARE\LED\led.h
+..\obj\main.o: ..\HARDWARE\KEY\key.h

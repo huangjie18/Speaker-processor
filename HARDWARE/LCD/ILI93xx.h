@@ -4,7 +4,7 @@
 //驱动为9341
 #include "sys.h"
 
-#define FSMC_Enable  1   //是否使用FSMC
+#define FSMC_Enable  0   //是否使用FSMC,1使用FSMC
 //硬件相关的子函数
 typedef struct 
 {

@@ -20,7 +20,7 @@ Purpose     : demonstrates the use of cursors
 Requirements: WindowManager - ( )
               MemoryDevices - ( )
               AntiAliasing  - ( )
-              VNC-Server    - ( )                                   
+              VNC-Server    - ( )
               PNG-Library   - ( )
               TrueTypeFonts - ( )
 ----------------------------------------------------------------------
@@ -48,6 +48,9 @@ Requirements: WindowManager - ( )
 #include "MULTIPAGE.h"
 #include "ICONVIEW.h"
 #include "TREEVIEW.h"
+#include "math.h"
+#include "stdio.h"
+#include "stdlib.h"
 /*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
@@ -67,11 +70,14 @@ Requirements: WindowManager - ( )
 *                                                                    *
 **********************************************************************
 */
+
+extern GUI_CONST_STORAGE GUI_FONT GUI_FontYahei;
+
 typedef struct {
-	GUI_AUTODEV_INFO AutoDevInfo;
-	GUI_POINT   aPoints[7];
-	float       Angle;
-}PARAM;
+    GUI_AUTODEV_INFO AutoDevInfo;
+    GUI_POINT   aPoints[7];
+    float       Angle;
+} PARAM;
 
 /*********************************************************************
 *
@@ -84,48 +90,27 @@ typedef struct {
 *       MainTask
 */
 void MainTask(void) {
-  GUI_Init();
-//	Pratice();  //Á·Ï°ÓÃ
-	example();  //Àý³Ì
-	while(1)
-	{
-//		display_2d();
-//		GUI_Delay(2000);
-//		alpha_display();
-//		GUI_Delay(2000);
-//		draw_polygon();
-		GUI_Delay(100);
-	}
+    WM_HWIN hteml;
+//    WM_SetCreateFlags(WM_CF_MEMDEV);  //¿ªÆô´æ´¢Éè±¸
+    GUI_Init();
+    CreateNoiseGate();
+//    Pratice();  //Á·Ï°ÓÃ
+//	example();
+
+    while(1)
+    {
+
+
+
+        GUI_Delay(100);
+    }
 }
 
 /*************************** End of file ****************************/
 
 
 
-//Á·Ï°
 void Pratice(void)
 {
-	GUI_ALPHA_STATE Alphastate;
-	GUI_EnableAlpha(1);
-	
-	GUI_SetBkColor(GUI_WHITE);
-	GUI_Clear();
-	
-	GUI_SetColor(GUI_BLACK);
-	GUI_DispStringHCenterAt("huangjie18",45,41);
-	
-	GUI_SetUserAlpha(&Alphastate,0XC0);
-	
-	GUI_SetColor(GUI_RED);
-	GUI_FillRect(0,0,49,49);
-	GUI_SetColor(GUI_GREEN);
-	GUI_FillRect(20,20,69,69);
-	GUI_SetColor(GUI_BLUE);
-	GUI_FillRect(40,40,89,89);
-	
-	GUI_RestoreUserAlpha(&Alphastate);
-	while(1)
-	{
 
-	}
 }

@@ -502,7 +502,12 @@ void BlockWrite(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsign
 void DrawPixel(u16 x,u16 y, int Color)
 {
 	BlockWrite(x,x,y,y);
-	*(__IO u16 *)(Bank1_LCD_D) = Color;
+	#if FSMC_Enable  //使用FSMC
+	*(__IO u16 *) (Bank1_LCD_D) = Color;
+	#else
+	WriteData(Color);
+	#endif
+	
 }
 
 //读LCD数据
@@ -548,10 +553,10 @@ u16 GetPoint(u16 x, u16 y)
 	r = *(__IO u16 *) (Bank1_LCD_D);
 	b = *(__IO u16 *) (Bank1_LCD_D);
 
-//	g = r&0xff;
-//	g <<= 8;
-	r = (r&0xf800)|((r&0x00fc)<<3)|((b)>>11);
-//	r = ((r>>11)<<11)|((g>>10)<<5)|(b>>11);
+	g = r&0xff;
+	g <<= 8;
+//	r = (r&0xf800)|((r&0x00fc)<<3)|((b)>>11);
+	r = ((r>>11)<<11)|((g>>10)<<5)|(b>>11);
 	return r;
 
 	

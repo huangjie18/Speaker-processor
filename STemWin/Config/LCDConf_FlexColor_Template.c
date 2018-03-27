@@ -56,7 +56,7 @@ Purpose     : Display controller configuration (single layer)
 #include "ILI93xx.h"
 
 
-#define Drive_LCD  0   //1使用正点原子例程，0使用野火例程
+#define Drive_LCD  1   //1使用正点原子例程，0使用野火例程有问题
 /*********************************************************************
 *
 *       Layer configuration (to be modified)
@@ -157,6 +157,13 @@ static void LcdReadDataMultiple(U16 * pData, int NumItems) {
   }
 }
 
+static U16 LcdReadData(void)
+{
+	U16 pData;
+	pData = *(__IO u16 *) (Bank1_LCD_D);
+	return pData;
+}
+
 /*********************************************************************
 *
 *       Public functions
@@ -173,7 +180,7 @@ static void LcdReadDataMultiple(U16 * pData, int NumItems) {
 *
 */
 #if Drive_LCD
-//正点原子例程所用，可以配置STemwin中没有的LCD驱动
+//正点原子例程所用，可以配置STemwin中没有的LCD驱动，会用到GUIDRV_Template.c
 void LCD_X_Config(void) {
   GUI_DEVICE * pDevice;
   CONFIG_FLEXCOLOR Config = {0};
@@ -182,7 +189,7 @@ void LCD_X_Config(void) {
   // Set display driver and color conversion
   //
   //在GUIDRV_Template.c中配置自己所属的LCD驱动
-  pDevice=GUI_DEVICE_CreateAndLink(GUIDRV_TEMPLATE, GUICC_M565, 0, 0);//正点原子例程所用
+  pDevice=GUI_DEVICE_CreateAndLink(&GUIDRV_Template_API, GUICC_M565, 0, 0);//正点原子例程所用
   //
   // Display driver configuration, required for Lin-driver
   //
@@ -191,7 +198,7 @@ void LCD_X_Config(void) {
 
 }
 #else
-//野火例程所用，配置STemwin可支持的LCD驱动
+//野火例程所用，配置STemwin可支持的LCD驱动,没有用到GUIDRV_Template.c
 void LCD_X_Config(void) {
   GUI_DEVICE * pDevice;
   CONFIG_FLEXCOLOR Config = {0};
@@ -214,8 +221,8 @@ void LCD_X_Config(void) {
 //  Config.NumDummyReads = 2;                                     //modify by fire 使用于ILI9341，其它根据情况是否注销掉
 
   GUIDRV_FlexColor_Config(pDevice, &Config);
-  //以下代码必须要，设置颜色读取格式，第三种格式才符合
-  GUIDRV_FlexColor_SetReadFunc66709_B16(pDevice,GUIDRV_FLEXCOLOR_READ_FUNC_III);
+  
+  
 
 //  // Set controller and operation mode
 //  //
@@ -224,6 +231,8 @@ void LCD_X_Config(void) {
   PortAPI.pfWriteM16_A1 = LcdWriteDataMultiple;
   PortAPI.pfReadM16_A1  = LcdReadDataMultiple;
   GUIDRV_FlexColor_SetFunc(pDevice, &PortAPI, GUIDRV_FLEXCOLOR_F66709, GUIDRV_FLEXCOLOR_M16C0B16);
+  
+  GUIDRV_FlexColor_SetReadFunc66709_B16(pDevice,GUIDRV_FLEXCOLOR_READ_FUNC_III);
 }
 #endif
 /*********************************************************************
