@@ -52,17 +52,17 @@ int main(void)
 	
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC,ENABLE);//使能CRC时钟，否则STemWin不能使用 
 //	GPIO_TEST();  //测试引脚是否短路
-	MainTask();
+//	MainTask();
 
-//	GUI_Init();
-//	GUI_SetBkColor(GUI_GRAY);
-//	GUI_Clear();
-//	DrawPixel(0,0,GUI_GRAY);
-//    DrawPixel(0,1,Red);
-//    DrawPixel(0,2,Blue);
-//    color = GetPoint(0,0);
-//	GUI_SetFont(&GUI_Font24B_ASCII);
-//    GUI_DispHexAt(color,50,50,4);
+	GUI_Init();
+	GUI_SetBkColor(GUI_GRAY);
+	GUI_Clear();
+	DrawPixel(0,0,Red);
+    DrawPixel(0,1,Red);
+    DrawPixel(0,2,Blue);
+    color = GetPoint(0,0);
+	GUI_SetFont(&GUI_Font24B_ASCII);
+    GUI_DispHexAt(color,50,50,4);
 
 	while(1)
 	{

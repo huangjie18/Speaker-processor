@@ -27,19 +27,18 @@ Project File Date:  03/27/2018
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Processor'
+compiling main.c...
+main.c(41): warning:  #177-D: variable "key_value" was declared but never referenced
+        u8 key_value;
+main.c: 1 warning, 0 errors
 compiling ILI93xx.c...
-..\HARDWARE\LCD\ILI93xx.c(583): warning:  #1-D: last line of file ends without a newline
+..\HARDWARE\LCD\ILI93xx.c(617): warning:  #177-D: variable "g" was declared but never referenced
+        u16 g;
+..\HARDWARE\LCD\ILI93xx.c(669): warning:  #1-D: last line of file ends without a newline
   }
-..\HARDWARE\LCD\ILI93xx.c: 1 warning, 0 errors
-compiling test.c...
-..\HARDWARE\Test\test.c(96): warning:  #223-D: function "CreateNoiseGate" declared implicitly
-      CreateNoiseGate();
-..\HARDWARE\Test\test.c(93): warning:  #177-D: variable "hteml" was declared but never referenced
-      WM_HWIN hteml;
-..\HARDWARE\Test\test.c: 2 warnings, 0 errors
-compiling GUIDRV_Template.c...
+..\HARDWARE\LCD\ILI93xx.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=62504 RO-data=18188 RW-data=1264 ZI-data=1080672  
+Program Size: Code=41788 RO-data=8344 RW-data=524 ZI-data=1080676  
 FromELF: creating hex file...
 "..\OBJ\Processor.axf" - 0 Error(s), 3 Warning(s).
 

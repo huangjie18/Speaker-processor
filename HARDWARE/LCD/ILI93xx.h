@@ -43,6 +43,23 @@ typedef struct
 #define DB14     PDout(9)
 #define DB15     PDout(8)
 
+#define DB0_IN     PDin(14)
+#define DB1_IN     PDin(15)
+#define DB2_IN     PDin(0)
+#define DB3_IN     PDin(1)
+#define DB4_IN     PEin(7)
+#define DB5_IN     PEin(8)
+#define DB6_IN     PEin(9)
+#define DB7_IN     PEin(10)
+#define DB8_IN     PEin(11)
+#define DB9_IN     PEin(12)
+#define DB10_IN    PEin(13)
+#define DB11_IN    PEin(14)
+#define DB12_IN    PEin(15)
+#define DB13_IN    PDin(10)
+#define DB14_IN    PDin(9)
+#define DB15_IN    PDin(8)
+
 #define White          0xFFFF
 #define Black          0x0000
 #define Blue           0x001F

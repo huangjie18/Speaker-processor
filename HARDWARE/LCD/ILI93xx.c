@@ -524,6 +524,86 @@ void opt_delay(u8 i)
 {
 	while(i--);
 }
+void LCD_IN(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7|GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|
+	GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
+	GPIO_Init(GPIOE, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14|GPIO_Pin_15|GPIO_Pin_0
+	|GPIO_Pin_1|GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10;
+	GPIO_Init(GPIOD, &GPIO_InitStructure);
+	
+//	GPIOE->ODR = 0; //全部输出0
+//	GPIOD->ODR = 0;
+}
+
+void LCD_OUT(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7|GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|
+	GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;
+	GPIO_Init(GPIOE, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14|GPIO_Pin_15|GPIO_Pin_0
+	|GPIO_Pin_1|GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10;
+	GPIO_Init(GPIOD, &GPIO_InitStructure);
+	
+//	GPIOE->ODR = 0XFFFF; //全部输出1
+//	GPIOD->ODR = 0XFFFF;
+}
+/**********************************************
+函数名：LCD_Read函数
+功能：读取GRAM的值
+入口参数：
+返回值：颜色值
+***********************************************/
+u16 LCD_Read()
+{
+	u8 Reg_i;
+	u16 temp;
+	LCD_IN();  //IO输入
+	LCD_CS = 0; //使能位
+	LCD_RS = 1; //数据位
+	LCD_RD = 0; //读数据使能位
+	for(Reg_i=0;Reg_i<16;Reg_i++)
+	{
+		switch(Reg_i)
+		{
+			case 0: temp = temp|DB15_IN;break; 
+			case 1: temp = (temp<<1)|DB14_IN;break; 
+			case 2: temp = (temp<<1)|DB13_IN;break; 
+			case 3: temp = (temp<<1)|DB12_IN;break; 
+			case 4: temp = (temp<<1)|DB11_IN;break; 
+			case 5: temp = (temp<<1)|DB10_IN;break; 
+			case 6: temp = (temp<<1)|DB9_IN;break; 
+			case 7: temp = (temp<<1)|DB8_IN;break; 
+			case 8: temp = (temp<<1)|DB7_IN;break; 
+			case 9: temp = (temp<<1)|DB6_IN;break; 
+			case 10:temp = (temp<<1)|DB5_IN;break; 
+			case 11:temp = (temp<<1)|DB4_IN;break; 
+			case 12:temp = (temp<<1)|DB3_IN;break; 
+			case 13:temp = (temp<<1)|DB2_IN;break; 
+			case 14:temp = (temp<<1)|DB1_IN;break; 
+			case 15:temp = (temp<<1)|DB0_IN;break;
+			default: break;
+			
+		}
+	}
+	LCD_RD = 1;
+	LCD_CS = 1; //关闭使能位
+	LCD_OUT(); //IO输出
+	
+	return temp;
+}
 /**********************************************
 函数名：DrawPixel读点函数
 功能：读取Lcd一个点指定颜色
@@ -549,14 +629,20 @@ u16 GetPoint(u16 x, u16 y)
 	
 	WriteComm(0x2E);
 	
+	#if FSMC_Enable
 	r = *(__IO u16 *) (Bank1_LCD_D);
 	r = *(__IO u16 *) (Bank1_LCD_D);
 	b = *(__IO u16 *) (Bank1_LCD_D);
+	#else
+	r = LCD_Read();
+	r = LCD_Read();
+	b = LCD_Read();
+	#endif
 
-	g = r&0xff;
-	g <<= 8;
-//	r = (r&0xf800)|((r&0x00fc)<<3)|((b)>>11);
-	r = ((r>>11)<<11)|((g>>10)<<5)|(b>>11);
+//	g = r&0xff;
+//	g <<= 8;
+	r = (r&0xf800)|((r&0x00fc)<<3)|((b)>>11);
+//	r = ((r>>11)<<11)|((g>>10)<<5)|(b>>11);
 	return r;
 
 	
