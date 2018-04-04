@@ -51,6 +51,8 @@ Requirements: WindowManager - ( )
 #include "math.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "Interface.h"
+#include "key.h"
 /*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
@@ -71,13 +73,6 @@ Requirements: WindowManager - ( )
 **********************************************************************
 */
 
-extern GUI_CONST_STORAGE GUI_FONT GUI_FontYahei;
-
-typedef struct {
-    GUI_AUTODEV_INFO AutoDevInfo;
-    GUI_POINT   aPoints[7];
-    float       Angle;
-} PARAM;
 
 /*********************************************************************
 *
@@ -89,21 +84,37 @@ typedef struct {
 *
 *       MainTask
 */
-void MainTask(void) {
+void MainTask(void)
+{
+	u8 key_value;
     WM_HWIN hteml;
-//    WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备
+    WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备
     GUI_Init();
-    CreateNoiseGate();
-//    Pratice();  //练习用
-//	example();
+//  Pratice();  //练习用
+//  example();  //例子用
+	hteml = CreateMainface(); //创建主界面
 
-    while(1)
-    {
+//    while(1)
+//    {
+//		key_value = Encoder_Check_Three();
+//		if(key_value) //有动作
+//		{
+//			switch(key_value)
+//			{
+//				case Encoder_left:
+//					GUI_SendKeyMsg(GUI_KEY_TAB, 1);
+//					break;
+//				case Encoder_right:
+//					GUI_SendKeyMsg(GUI_KEY_BACKTAB, 1);
+//					break;
+//				
+//				default:
+//					break;
+//			}
+//		}
+//		GUI_Delay(10);
 
-
-
-        GUI_Delay(100);
-    }
+//    }
 }
 
 /*************************** End of file ****************************/

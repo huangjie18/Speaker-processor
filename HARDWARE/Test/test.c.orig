@@ -71,14 +71,33 @@ Requirements: WindowManager - ( )
 **********************************************************************
 */
 
-extern GUI_CONST_STORAGE GUI_FONT GUI_FontYahei;
-
-typedef struct {
-    GUI_AUTODEV_INFO AutoDevInfo;
-    GUI_POINT   aPoints[7];
-    float       Angle;
-} PARAM;
-
+const GUI_POINT aPoints[] = {
+    { 40, 20},
+    { 0, 20},
+    { 20, 0}
+};
+/* 用于存储放大后的坐标点 */
+GUI_POINT aEnlargedPoints[GUI_COUNTOF(aPoints)];
+void Sample(void) {
+    int i;
+    /* 清屏 */
+    GUI_Clear();
+    /* 设置绘图模式 */
+    GUI_SetDrawMode(GUI_DM_XOR);
+    /* 绘制多边形 */
+    GUI_FillPolygon(aPoints, /* 指向要显示和填充的多边形 */
+                    GUI_COUNTOF(aPoints), /* 点列表中指定的点数量 */
+                    140, /* 原点的 X 位置 */
+                    110); /* 原点的 Y 位置 */
+    for (i = 1; i < 10; i++) {
+        GUI_EnlargePolygon(aEnlargedPoints, /* 指向目标多边形 */
+                           aPoints, /* 指向源多边形 */
+                           GUI_COUNTOF(aPoints), /* 点列表中指定的点数量 */
+                           i * 5); /* 扩展多边形的长度 （像素） */
+        /* 绘制放大后的多边形 */
+        GUI_FillPolygon(aEnlargedPoints, GUI_COUNTOF(aPoints), 140, 110);
+    }
+}
 /*********************************************************************
 *
 *       Public code
@@ -90,39 +109,21 @@ typedef struct {
 *       MainTask
 */
 void MainTask(void) {
-	WM_HWIN hteml;
-	WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备
-    GUI_Init();
-	hteml = CreateFramewin();
-	WM_SetFocus(hteml);
+//    WM_HWIN hteml;
+////    WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备
+//    GUI_Init();
+//    CreateNoiseGate();
 //    Pratice();  //练习用
 //	example();
-
+    GUI_Init();
+    /* 调用测试函数 */
+    Sample();
     while(1)
     {
 
-//		hteml=CreateNoiseGate();
-//        GUI_Delay(1000);
-//		
-//		GUI_EndDialog(hteml,1);
-//		hteml=CreateIN_AuxMixerGain();
-//		GUI_Delay(1000);
-//		
-//		GUI_EndDialog(hteml,1);
-//		hteml=CreateIN_Gain();
-//		GUI_Delay(1000);
-//		
-//		GUI_EndDialog(hteml,1);
-//		hteml=CreateOUT_Delay();
-//		GUI_Delay(1000);
-//		
-//		GUI_EndDialog(hteml,1);
-//		hteml=CreateOUT_Limiter();
-//		GUI_Delay(1000);
-//		
-//		GUI_EndDialog(hteml,1);
 
-		GUI_Delay(100);
+
+        GUI_Delay(100);
     }
 }
 

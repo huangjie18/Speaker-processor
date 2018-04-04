@@ -532,6 +532,16 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\KEY\key.c</FilePath>
             </File>
+            <File>
+              <FileName>lannge_yellow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Lannge\lannge_yellow.c</FilePath>
+            </File>
+            <File>
+              <FileName>lannge_white.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Lannge\lannge_white.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -591,36 +601,14 @@
           <GroupName>Interface</GroupName>
           <Files>
             <File>
-              <FileName>IN_GainDLG.c</FileName>
+              <FileName>MainfaceDLG.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\HARDWARE\InterFace\IN_GainDLG.c</FilePath>
-            </File>
-            <File>
-              <FileName>NoiseGateDLG.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\InterFace\NoiseGateDLG.c</FilePath>
-            </File>
-            <File>
-              <FileName>IN_AuxMixerGainDLG.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\InterFace\IN_AuxMixerGainDLG.c</FilePath>
+              <FilePath>..\HARDWARE\InterFace\MainfaceDLG.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Interface_Out</GroupName>
-          <Files>
-            <File>
-              <FileName>OUT_DelayDLG.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\InterFace_Out\OUT_DelayDLG.c</FilePath>
-            </File>
-            <File>
-              <FileName>OUT_LimiterDLG.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\InterFace_Out\OUT_LimiterDLG.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>

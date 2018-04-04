@@ -79,3 +79,5 @@
 ..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\test.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\test.o: ..\HARDWARE\KEY\key.h
