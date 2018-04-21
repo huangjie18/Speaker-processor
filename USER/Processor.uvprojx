@@ -133,7 +133,7 @@
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
-            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <LimitSpeedToRealTime>1</LimitSpeedToRealTime>
             <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
@@ -601,9 +601,49 @@
           <GroupName>Interface</GroupName>
           <Files>
             <File>
-              <FileName>MainfaceDLG.c</FileName>
+              <FileName>Main_face.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\HARDWARE\InterFace\MainfaceDLG.c</FilePath>
+              <FilePath>..\HARDWARE\InterFace\Main_face.c</FilePath>
+            </File>
+            <File>
+              <FileName>Flex_set.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\Flex_set.c</FilePath>
+            </File>
+            <File>
+              <FileName>Input_face.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\Input_face.c</FilePath>
+            </File>
+            <File>
+              <FileName>Input1_third_layer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\Input1_third_layer.c</FilePath>
+            </File>
+            <File>
+              <FileName>First_ChildDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Second_ChildDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Third_ChildDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Four_ChildDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Five_ChildDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c</FilePath>
             </File>
           </Files>
         </Group>

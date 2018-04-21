@@ -45,3 +45,4 @@
 ..\obj\mainfacedlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\mainfacedlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\mainfacedlg.o: ..\STemWin\inc\KNOB.h
+..\obj\mainfacedlg.o: ..\HARDWARE\InterFace\Interface.h

@@ -162,11 +162,11 @@ u8 Encoder_Check_One(void)
 		updata = 0;
 		if((encoder_last_b==0)&&(encoder_now_b==1))
 		{
-			Encoder_sample[one].encoder_state = Encoder_right;
+			Encoder_sample[one].encoder_state = Encoder1_right;
 		}
 		else if((encoder_last_b==1)&&(encoder_now_b==0))
 		{
-			Encoder_sample[one].encoder_state = Encoder_left;
+			Encoder_sample[one].encoder_state = Encoder1_left;
 		}
 		else
 		{
@@ -204,11 +204,11 @@ u8 Encoder_Check_Two(void)
 		updata = 0;
 		if((encoder_last_b==0)&&(encoder_now_b==1))
 		{
-			Encoder_sample[two].encoder_state = Encoder_right;
+			Encoder_sample[two].encoder_state = Encoder2_right;
 		}
 		else if((encoder_last_b==1)&&(encoder_now_b==0))
 		{
-			Encoder_sample[two].encoder_state = Encoder_left;
+			Encoder_sample[two].encoder_state = Encoder2_left;
 		}
 		else
 		{
@@ -245,11 +245,11 @@ u8 Encoder_Check_Three(void)
 		updata = 0;
 		if((encoder_last_b==0)&&(encoder_now_b==1))
 		{
-			Encoder_sample[three].encoder_state = Encoder_right;
+			Encoder_sample[three].encoder_state = Encoder3_right;
 		}
 		else if((encoder_last_b==1)&&(encoder_now_b==0))
 		{
-			Encoder_sample[three].encoder_state = Encoder_left;
+			Encoder_sample[three].encoder_state = Encoder3_left;
 		}
 		else
 		{

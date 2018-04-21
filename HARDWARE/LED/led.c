@@ -12,8 +12,9 @@ void LED_GPIO_Init(void)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1|GPIO_Pin_0|GPIO_Pin_2|GPIO_Pin_3;		
     GPIO_Init(GPIOC, &GPIO_InitStructure);
 	
-	GPIO_SetBits(GPIOC,GPIO_Pin_0);
-	GPIO_SetBits(GPIOC,GPIO_Pin_1);
-	GPIO_SetBits(GPIOC,GPIO_Pin_2);
-	GPIO_SetBits(GPIOC,GPIO_Pin_3);
+	//µÆÈ«ÁÁ
+//	GPIO_SetBits(GPIOC,GPIO_Pin_0);
+//	GPIO_SetBits(GPIOC,GPIO_Pin_1);
+//	GPIO_SetBits(GPIOC,GPIO_Pin_2);
+//	GPIO_SetBits(GPIOC,GPIO_Pin_3);
 }

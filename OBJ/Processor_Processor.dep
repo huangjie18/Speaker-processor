@@ -1,6 +1,6 @@
 Dependencies for Project 'Processor', Target 'Processor': (DO NOT MODIFY !)
-F (.\main.c)(0x5AC426BE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+F (.\main.c)(0x5ADAA7CE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -29,7 +29,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 I (..\SYSTEM\delay\delay.h)(0x5A9660DF)
-I (..\HARDWARE\LCD\ILI93xx.h)(0x5AC4225D)
+I (..\HARDWARE\LCD\ILI93xx.h)(0x5ACB1EC7)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
 I (..\MALLOC\malloc.h)(0x5AC3312A)
 I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
@@ -64,10 +64,26 @@ I (..\STemWin\inc\LISTVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\HARDWARE\Test\test.h)(0x5AA7741D)
 I (..\HARDWARE\LED\led.h)(0x5AB44FD9)
-I (..\HARDWARE\KEY\key.h)(0x5AC425C9)
+I (..\HARDWARE\KEY\key.h)(0x5ADA82AC)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
+I (..\STemWin\inc\CALENDAR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHOOSECOLOR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHOOSEFILE.h)(0x55BA3A19)
+I (..\STemWin\inc\DROPDOWN.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTBOX.h)(0x55BA3A20)
+I (..\STemWin\inc\EDIT.h)(0x55BA3A23)
+I (..\STemWin\inc\IMAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTWHEEL.h)(0x55BA3A23)
+I (..\STemWin\inc\MENU.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIEDIT.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIPAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\RADIO.h)(0x55BA3A16)
+I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
 F (.\stm32f10x_it.c)(0x4D99A59E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x4D99A59E)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -96,7 +112,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (.\system_stm32f10x.c)(0x4D99A59E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\system_stm32f10x.o --omf_browse ..\obj\system_stm32f10x.crf --depend ..\obj\system_stm32f10x.d)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -129,7 +145,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 F (..\CORE\startup_stm32f10x_hd.s)(0x5AAA185A)(--cpu Cortex-M3 -g --apcs=interwork -I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 515" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
 F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c)(0x4D79EEC6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_gpio.o --omf_browse ..\obj\stm32f10x_gpio.crf --depend ..\obj\stm32f10x_gpio.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x4D783BB4)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -158,7 +174,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_rcc.o --omf_browse ..\obj\stm32f10x_rcc.crf --depend ..\obj\stm32f10x_rcc.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x4D783BB4)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -187,7 +203,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\STM32F10x_StdPeriph_Driver\src\misc.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\misc.o --omf_browse ..\obj\misc.crf --depend ..\obj\misc.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -216,7 +232,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_usart.o --omf_browse ..\obj\stm32f10x_usart.crf --depend ..\obj\stm32f10x_usart.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -245,7 +261,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_fsmc.o --omf_browse ..\obj\stm32f10x_fsmc.crf --depend ..\obj\stm32f10x_fsmc.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_fsmc.h)(0x4D783BB4)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -274,7 +290,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_tim.o --omf_browse ..\obj\stm32f10x_tim.crf --depend ..\obj\stm32f10x_tim.d)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -303,7 +319,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\SYSTEM\delay\delay.c)(0x5A965BCD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x5A9660DF)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -333,7 +349,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\SYSTEM\sys\sys.c)(0x5A961E5F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -363,7 +379,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 F (..\SYSTEM\usart\usart.c)(0x5A9E0640)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
 I (..\SYSTEM\usart\usart.h)(0x5A964459)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -392,10 +408,10 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54C245B8)
-F (..\HARDWARE\LCD\ILI93xx.c)(0x5ABAF28F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\ili93xx.o --omf_browse ..\obj\ili93xx.crf --depend ..\obj\ili93xx.d)
-I (..\HARDWARE\LCD\ILI93xx.h)(0x5AC4225D)
+F (..\HARDWARE\LCD\ILI93xx.c)(0x5AC476DC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\ili93xx.o --omf_browse ..\obj\ili93xx.crf --depend ..\obj\ili93xx.d)
+I (..\HARDWARE\LCD\ILI93xx.h)(0x5ACB1EC7)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -424,10 +440,10 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 I (..\SYSTEM\delay\delay.h)(0x5A9660DF)
-F (..\HARDWARE\TIMER\timer.c)(0x5AAA1BF8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+F (..\HARDWARE\TIMER\timer.c)(0x5AC71524)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\HARDWARE\TIMER\timer.h)(0x54BA197F)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -464,10 +480,10 @@ I (..\STemWin\inc\Global.h)(0x55BA3A17)
 I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
 I (..\SYSTEM\usart\usart.h)(0x5A964459)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54C245B8)
-F (..\HARDWARE\Test\test.c)(0x5AC4220C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+F (..\HARDWARE\Test\test.c)(0x5ADA8AFE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
 I (..\HARDWARE\Test\test.h)(0x5AA7741D)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -503,7 +519,7 @@ I (..\STemWin\inc\GUI_Type.h)(0x55BA3A23)
 I (..\STemWin\inc\LCD.h)(0x55BA3A21)
 I (..\STemWin\inc\Global.h)(0x55BA3A17)
 I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
 I (..\STemWin\inc\WM.h)(0x55BA3A21)
 I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
 I (..\STemWin\inc\BUTTON.h)(0x55BA3A21)
@@ -539,11 +555,12 @@ I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
 I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x54C245B8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x54C245B8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x54C245B8)
-I (..\HARDWARE\InterFace\Interface.h)(0x5ABAF9A1)
-I (..\HARDWARE\KEY\key.h)(0x5AC425C9)
+I (..\HARDWARE\KEY\key.h)(0x5ADA82AC)
+I (..\MALLOC\malloc.h)(0x5AC3312A)
 F (..\HARDWARE\Test\example.c)(0x5AB9ADD3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\example.o --omf_browse ..\obj\example.crf --depend ..\obj\example.d)
 I (..\HARDWARE\Test\example.h)(0x5AB99E46)
 I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
@@ -554,10 +571,10 @@ I (..\STemWin\inc\LCD.h)(0x55BA3A21)
 I (..\STemWin\inc\Global.h)(0x55BA3A17)
 I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
 I (..\STemWin\Config\LCDConf.h)(0x5448964C)
-F (..\HARDWARE\LED\led.c)(0x5AB446D0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+F (..\HARDWARE\LED\led.c)(0x5ACB1B23)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HARDWARE\LED\led.h)(0x5AB44FD9)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -585,10 +602,10 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-F (..\HARDWARE\KEY\key.c)(0x5AC424FA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
-I (..\HARDWARE\KEY\key.h)(0x5AC425C9)
+F (..\HARDWARE\KEY\key.c)(0x5ADA82CB)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\key.o --omf_browse ..\obj\key.crf --depend ..\obj\key.d)
+I (..\HARDWARE\KEY\key.h)(0x5ADA82AC)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -643,7 +660,7 @@ I (..\STemWin\inc\LCD.h)(0x55BA3A21)
 I (..\STemWin\inc\Global.h)(0x55BA3A17)
 I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
 I (..\MALLOC\malloc.h)(0x5AC3312A)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -687,9 +704,9 @@ I (..\STemWin\inc\GUI_Private.h)(0x55BA3A23)
 I (..\STemWin\inc\GUI_Debug.h)(0x55BA3A20)
 I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
 I (..\STemWin\inc\LCD_ConfDefaults.h)(0x55BA3A16)
-I (..\HARDWARE\LCD\ILI93xx.h)(0x5AC4225D)
+I (..\HARDWARE\LCD\ILI93xx.h)(0x5ACB1EC7)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -726,9 +743,9 @@ I (..\STemWin\inc\LCD.h)(0x55BA3A21)
 I (..\STemWin\inc\Global.h)(0x55BA3A17)
 I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
 I (..\STemWin\inc\GUIDRV_FlexColor.h)(0x55BA3A22)
-I (..\HARDWARE\LCD\ILI93xx.h)(0x5AC4225D)
+I (..\HARDWARE\LCD\ILI93xx.h)(0x5ACB1EC7)
 I (..\SYSTEM\sys\sys.h)(0x5A9620BB)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -756,7 +773,7 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-F (..\STemWin\OS\GUI_X.c)(0x55BA39FA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\gui_x.o --omf_browse ..\obj\gui_x.crf --depend ..\obj\gui_x.d)
+F (..\STemWin\OS\GUI_X.c)(0x5ADA9150)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\gui_x.o --omf_browse ..\obj\gui_x.crf --depend ..\obj\gui_x.d)
 I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
 I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
 I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
@@ -775,7 +792,7 @@ I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
 F (..\STemWin\Lib\STemWin532_CM3_Keil.lib)(0x591B053B)()
 F (..\MALLOC\malloc.c)(0x5502E8B3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\malloc.o --omf_browse ..\obj\malloc.crf --depend ..\obj\malloc.d)
 I (..\MALLOC\malloc.h)(0x5AC3312A)
-I (..\CORE\stm32f10x.h)(0x5A9E3E0E)
+I (..\CORE\stm32f10x.h)(0x5AC47231)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
 I (..\CORE\system_stm32f10x.h)(0x4D783CAA)
@@ -803,8 +820,8 @@ I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-F (..\HARDWARE\InterFace\IN_GainDLG.c)(0x5AB5C394)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\in_gaindlg.o --omf_browse ..\obj\in_gaindlg.crf --depend ..\obj\in_gaindlg.d)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
+F (..\HARDWARE\InterFace\Main_face.c)(0x5ADA9C8B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main_face.o --omf_browse ..\obj\main_face.crf --depend ..\obj\main_face.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
 I (..\STemWin\inc\WM.h)(0x55BA3A21)
 I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
 I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
@@ -847,8 +864,9 @@ I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
 I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
-F (..\HARDWARE\InterFace\NoiseGateDLG.c)(0x5AB31F1B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\noisegatedlg.o --omf_browse ..\obj\noisegatedlg.crf --depend ..\obj\noisegatedlg.d)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\Flex_set.c)(0x5ADA834E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\flex_set.o --omf_browse ..\obj\flex_set.crf --depend ..\obj\flex_set.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
 I (..\STemWin\inc\WM.h)(0x55BA3A21)
 I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
 I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
@@ -891,8 +909,9 @@ I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
 I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
-F (..\HARDWARE\InterFace\IN_AuxMixerGainDLG.c)(0x5AB37650)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\in_auxmixergaindlg.o --omf_browse ..\obj\in_auxmixergaindlg.crf --depend ..\obj\in_auxmixergaindlg.d)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\Input_face.c)(0x5ADA9686)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\input_face.o --omf_browse ..\obj\input_face.crf --depend ..\obj\input_face.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
 I (..\STemWin\inc\WM.h)(0x55BA3A21)
 I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
 I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
@@ -935,53 +954,9 @@ I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
 I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
-F (..\HARDWARE\InterFace\MainfaceDLG.c)(0x5AC42E77)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\mainfacedlg.o --omf_browse ..\obj\mainfacedlg.crf --depend ..\obj\mainfacedlg.d)
-I (..\HARDWARE\InterFace\Interface.h)(0x5ABAF9A1)
-I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
-I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
-I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
-I (..\STemWin\inc\GUI_Type.h)(0x55BA3A23)
-I (..\STemWin\inc\LCD.h)(0x55BA3A21)
-I (..\STemWin\inc\Global.h)(0x55BA3A17)
-I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
-I (..\STemWin\inc\WM.h)(0x55BA3A21)
-I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
-I (..\STemWin\inc\BUTTON.h)(0x55BA3A21)
-I (..\STemWin\inc\DIALOG_Intern.h)(0x55BA3A19)
-I (..\STemWin\inc\WIDGET.h)(0x55BA3A23)
-I (..\STemWin\inc\WM_Intern.h)(0x55BA3A23)
-I (..\STemWin\inc\GUI_Private.h)(0x55BA3A23)
-I (..\STemWin\inc\LCD_Protected.h)(0x55BA3A22)
-I (..\STemWin\inc\GUI_Debug.h)(0x55BA3A20)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x54C245B8)
-I (..\STemWin\inc\SCROLLBAR.h)(0x55BA3A19)
-I (..\STemWin\inc\CALENDAR.h)(0x55BA3A23)
-I (..\STemWin\inc\CHECKBOX.h)(0x55BA3A19)
-I (..\STemWin\inc\CHOOSECOLOR.h)(0x55BA3A23)
-I (..\STemWin\inc\CHOOSEFILE.h)(0x55BA3A19)
-I (..\STemWin\inc\DROPDOWN.h)(0x55BA3A23)
-I (..\STemWin\inc\LISTBOX.h)(0x55BA3A20)
-I (..\STemWin\inc\EDIT.h)(0x55BA3A23)
-I (..\STemWin\inc\FRAMEWIN.h)(0x55BA3A17)
-I (..\STemWin\inc\GRAPH.h)(0x55BA3A20)
-I (..\STemWin\inc\HEADER.h)(0x55BA3A23)
-I (..\STemWin\inc\ICONVIEW.h)(0x55BA3A23)
-I (..\STemWin\inc\IMAGE.h)(0x55BA3A23)
-I (..\STemWin\inc\LISTVIEW.h)(0x55BA3A20)
-I (..\STemWin\inc\LISTWHEEL.h)(0x55BA3A23)
-I (..\STemWin\inc\MENU.h)(0x55BA3A19)
-I (..\STemWin\inc\MULTIEDIT.h)(0x55BA3A19)
-I (..\STemWin\inc\MULTIPAGE.h)(0x55BA3A23)
-I (..\STemWin\inc\PROGBAR.h)(0x55BA3A19)
-I (..\STemWin\inc\RADIO.h)(0x55BA3A16)
-I (..\STemWin\inc\SLIDER.h)(0x55BA3A1F)
-I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
-I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
-I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
-I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
-F (..\HARDWARE\InterFace_Out\OUT_DelayDLG.c)(0x5AB36D1E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\out_delaydlg.o --omf_browse ..\obj\out_delaydlg.crf --depend ..\obj\out_delaydlg.d)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\Input1_third_layer.c)(0x5ADAE322)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\input1_third_layer.o --omf_browse ..\obj\input1_third_layer.crf --depend ..\obj\input1_third_layer.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
 I (..\STemWin\inc\WM.h)(0x55BA3A21)
 I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
 I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
@@ -1024,8 +999,9 @@ I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
 I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
-F (..\HARDWARE\InterFace_Out\OUT_LimiterDLG.c)(0x5AB372A5)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\out_limiterdlg.o --omf_browse ..\obj\out_limiterdlg.crf --depend ..\obj\out_limiterdlg.d)
-I (..\STemWin\inc\DIALOG.h)(0x55BA3A20)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c)(0x5ADADF26)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\first_childdlg.o --omf_browse ..\obj\first_childdlg.crf --depend ..\obj\first_childdlg.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
 I (..\STemWin\inc\WM.h)(0x55BA3A21)
 I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
 I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
@@ -1068,3 +1044,184 @@ I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
 I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
 I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
 I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c)(0x5ADAD8A2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\second_childdlg.o --omf_browse ..\obj\second_childdlg.crf --depend ..\obj\second_childdlg.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
+I (..\STemWin\inc\WM.h)(0x55BA3A21)
+I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
+I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
+I (..\STemWin\inc\GUI_Type.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD.h)(0x55BA3A21)
+I (..\STemWin\inc\Global.h)(0x55BA3A17)
+I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
+I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
+I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
+I (..\STemWin\inc\BUTTON.h)(0x55BA3A21)
+I (..\STemWin\inc\DIALOG_Intern.h)(0x55BA3A19)
+I (..\STemWin\inc\WIDGET.h)(0x55BA3A23)
+I (..\STemWin\inc\WM_Intern.h)(0x55BA3A23)
+I (..\STemWin\inc\GUI_Private.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD_Protected.h)(0x55BA3A22)
+I (..\STemWin\inc\GUI_Debug.h)(0x55BA3A20)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x54C245B8)
+I (..\STemWin\inc\SCROLLBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\CALENDAR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHECKBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\CHOOSECOLOR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHOOSEFILE.h)(0x55BA3A19)
+I (..\STemWin\inc\DROPDOWN.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTBOX.h)(0x55BA3A20)
+I (..\STemWin\inc\EDIT.h)(0x55BA3A23)
+I (..\STemWin\inc\FRAMEWIN.h)(0x55BA3A17)
+I (..\STemWin\inc\GRAPH.h)(0x55BA3A20)
+I (..\STemWin\inc\HEADER.h)(0x55BA3A23)
+I (..\STemWin\inc\ICONVIEW.h)(0x55BA3A23)
+I (..\STemWin\inc\IMAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\LISTWHEEL.h)(0x55BA3A23)
+I (..\STemWin\inc\MENU.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIEDIT.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIPAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\PROGBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\RADIO.h)(0x55BA3A16)
+I (..\STemWin\inc\SLIDER.h)(0x55BA3A1F)
+I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
+I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c)(0x5ADADFC8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\third_childdlg.o --omf_browse ..\obj\third_childdlg.crf --depend ..\obj\third_childdlg.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
+I (..\STemWin\inc\WM.h)(0x55BA3A21)
+I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
+I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
+I (..\STemWin\inc\GUI_Type.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD.h)(0x55BA3A21)
+I (..\STemWin\inc\Global.h)(0x55BA3A17)
+I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
+I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
+I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
+I (..\STemWin\inc\BUTTON.h)(0x55BA3A21)
+I (..\STemWin\inc\DIALOG_Intern.h)(0x55BA3A19)
+I (..\STemWin\inc\WIDGET.h)(0x55BA3A23)
+I (..\STemWin\inc\WM_Intern.h)(0x55BA3A23)
+I (..\STemWin\inc\GUI_Private.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD_Protected.h)(0x55BA3A22)
+I (..\STemWin\inc\GUI_Debug.h)(0x55BA3A20)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x54C245B8)
+I (..\STemWin\inc\SCROLLBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\CALENDAR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHECKBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\CHOOSECOLOR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHOOSEFILE.h)(0x55BA3A19)
+I (..\STemWin\inc\DROPDOWN.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTBOX.h)(0x55BA3A20)
+I (..\STemWin\inc\EDIT.h)(0x55BA3A23)
+I (..\STemWin\inc\FRAMEWIN.h)(0x55BA3A17)
+I (..\STemWin\inc\GRAPH.h)(0x55BA3A20)
+I (..\STemWin\inc\HEADER.h)(0x55BA3A23)
+I (..\STemWin\inc\ICONVIEW.h)(0x55BA3A23)
+I (..\STemWin\inc\IMAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\LISTWHEEL.h)(0x55BA3A23)
+I (..\STemWin\inc\MENU.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIEDIT.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIPAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\PROGBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\RADIO.h)(0x55BA3A16)
+I (..\STemWin\inc\SLIDER.h)(0x55BA3A1F)
+I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
+I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c)(0x5ADAE02C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\four_childdlg.o --omf_browse ..\obj\four_childdlg.crf --depend ..\obj\four_childdlg.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
+I (..\STemWin\inc\WM.h)(0x55BA3A21)
+I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
+I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
+I (..\STemWin\inc\GUI_Type.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD.h)(0x55BA3A21)
+I (..\STemWin\inc\Global.h)(0x55BA3A17)
+I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
+I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
+I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
+I (..\STemWin\inc\BUTTON.h)(0x55BA3A21)
+I (..\STemWin\inc\DIALOG_Intern.h)(0x55BA3A19)
+I (..\STemWin\inc\WIDGET.h)(0x55BA3A23)
+I (..\STemWin\inc\WM_Intern.h)(0x55BA3A23)
+I (..\STemWin\inc\GUI_Private.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD_Protected.h)(0x55BA3A22)
+I (..\STemWin\inc\GUI_Debug.h)(0x55BA3A20)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x54C245B8)
+I (..\STemWin\inc\SCROLLBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\CALENDAR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHECKBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\CHOOSECOLOR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHOOSEFILE.h)(0x55BA3A19)
+I (..\STemWin\inc\DROPDOWN.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTBOX.h)(0x55BA3A20)
+I (..\STemWin\inc\EDIT.h)(0x55BA3A23)
+I (..\STemWin\inc\FRAMEWIN.h)(0x55BA3A17)
+I (..\STemWin\inc\GRAPH.h)(0x55BA3A20)
+I (..\STemWin\inc\HEADER.h)(0x55BA3A23)
+I (..\STemWin\inc\ICONVIEW.h)(0x55BA3A23)
+I (..\STemWin\inc\IMAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\LISTWHEEL.h)(0x55BA3A23)
+I (..\STemWin\inc\MENU.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIEDIT.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIPAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\PROGBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\RADIO.h)(0x55BA3A16)
+I (..\STemWin\inc\SLIDER.h)(0x55BA3A1F)
+I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
+I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)
+F (..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c)(0x5ADAE06F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\CORE -I..\STM32F10x_StdPeriph_Driver\inc -I..\USER -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDWARE\LCD -I..\STemWin\Config -I..\STemWin\inc -I..\MALLOC -I..\HARDWARE\TIMER -I..\STemWin\Demo -I..\HARDWARE\Test -I..\HARDWARE\InterFace -I..\HARDWARE\LED -I..\HARDWARE\KEY-I D:\GitHub\Speaker-processor\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="515" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\five_childdlg.o --omf_browse ..\obj\five_childdlg.crf --depend ..\obj\five_childdlg.d)
+I (..\STemWin\inc\DIALOG.h)(0x5AC71428)
+I (..\STemWin\inc\WM.h)(0x55BA3A21)
+I (..\STemWin\inc\GUI_ConfDefaults.h)(0x55BA3A23)
+I (..\STemWin\Config\GUIConf.h)(0x5AB99BB1)
+I (..\STemWin\inc\GUI_Type.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD.h)(0x55BA3A21)
+I (..\STemWin\inc\Global.h)(0x55BA3A17)
+I (..\STemWin\inc\WM_GUI.h)(0x55BA3A19)
+I (..\STemWin\inc\GUI.h)(0x5ABA05BB)
+I (..\STemWin\inc\GUI_Version.h)(0x55BA3A21)
+I (..\STemWin\inc\BUTTON.h)(0x55BA3A21)
+I (..\STemWin\inc\DIALOG_Intern.h)(0x55BA3A19)
+I (..\STemWin\inc\WIDGET.h)(0x55BA3A23)
+I (..\STemWin\inc\WM_Intern.h)(0x55BA3A23)
+I (..\STemWin\inc\GUI_Private.h)(0x55BA3A23)
+I (..\STemWin\inc\LCD_Protected.h)(0x55BA3A22)
+I (..\STemWin\inc\GUI_Debug.h)(0x55BA3A20)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x54C245B8)
+I (..\STemWin\inc\SCROLLBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\CALENDAR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHECKBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\CHOOSECOLOR.h)(0x55BA3A23)
+I (..\STemWin\inc\CHOOSEFILE.h)(0x55BA3A19)
+I (..\STemWin\inc\DROPDOWN.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTBOX.h)(0x55BA3A20)
+I (..\STemWin\inc\EDIT.h)(0x55BA3A23)
+I (..\STemWin\inc\FRAMEWIN.h)(0x55BA3A17)
+I (..\STemWin\inc\GRAPH.h)(0x55BA3A20)
+I (..\STemWin\inc\HEADER.h)(0x55BA3A23)
+I (..\STemWin\inc\ICONVIEW.h)(0x55BA3A23)
+I (..\STemWin\inc\IMAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\LISTVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\LISTWHEEL.h)(0x55BA3A23)
+I (..\STemWin\inc\MENU.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIEDIT.h)(0x55BA3A19)
+I (..\STemWin\inc\MULTIPAGE.h)(0x55BA3A23)
+I (..\STemWin\inc\PROGBAR.h)(0x55BA3A19)
+I (..\STemWin\inc\RADIO.h)(0x55BA3A16)
+I (..\STemWin\inc\SLIDER.h)(0x55BA3A1F)
+I (..\STemWin\inc\SPINBOX.h)(0x55BA3A19)
+I (..\STemWin\inc\TEXT.h)(0x55BA3A19)
+I (..\STemWin\inc\TREEVIEW.h)(0x55BA3A20)
+I (..\STemWin\inc\KNOB.h)(0x55BA3A23)
+I (..\HARDWARE\InterFace\Interface.h)(0x5ADAE2E2)

@@ -53,6 +53,7 @@ Requirements: WindowManager - ( )
 #include "stdlib.h"
 #include "Interface.h"
 #include "key.h"
+#include "malloc.h"
 /*********************************************************************
 *                                                                    *
 *                SEGGER Microcontroller GmbH & Co. KG                *
@@ -73,6 +74,13 @@ Requirements: WindowManager - ( )
 **********************************************************************
 */
 
+//默认皮肤设置
+static void FLEX_SET(void)
+{
+	//设置皮肤
+	Button_flex();
+//	Framewin_flex(); //用了自定义
+}
 
 /*********************************************************************
 *
@@ -87,41 +95,14 @@ Requirements: WindowManager - ( )
 void MainTask(void)
 {
 	u8 key_value;
-    WM_HWIN hteml;
-    WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备
+    WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备，要消耗内存
     GUI_Init();
+	FLEX_SET(); //皮肤设置
 //  Pratice();  //练习用
 //  example();  //例子用
-	hteml = CreateMainface(); //创建主界面
+	hWin_now = CreateMainface(); //创建主界面
 
-//    while(1)
-//    {
-//		key_value = Encoder_Check_Three();
-//		if(key_value) //有动作
-//		{
-//			switch(key_value)
-//			{
-//				case Encoder_left:
-//					GUI_SendKeyMsg(GUI_KEY_TAB, 1);
-//					break;
-//				case Encoder_right:
-//					GUI_SendKeyMsg(GUI_KEY_BACKTAB, 1);
-//					break;
-//				
-//				default:
-//					break;
-//			}
-//		}
-//		GUI_Delay(10);
-
-//    }
 }
 
 /*************************** End of file ****************************/
 
-
-
-void Pratice(void)
-{
-
-}

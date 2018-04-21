@@ -20,7 +20,7 @@
 
 // USER START (Optionally insert additional includes)
 // USER END
-#include "Interface.h"
+
 #include "DIALOG.h"
 
 /*********************************************************************
@@ -38,7 +38,7 @@
 #define ID_BUTTON_4 (GUI_ID_USER + 0x06)
 #define ID_BUTTON_5 (GUI_ID_USER + 0x07)
 #define ID_TEXT_1 (GUI_ID_USER + 0x08)
-
+#define MSG_CreateInfo      (GUI_ID_USER + 0x0E)
 
 #define Font_Text  GUI_FONT_24_1   //字体
 extern GUI_CONST_STORAGE GUI_BITMAP bmlannge_yellow;  //橙色logo
@@ -69,8 +69,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 	{ BUTTON_CreateIndirect, "Button", ID_BUTTON_4, 150, 155, 103, 71, 0, 0x0, 0 },
 	{ BUTTON_CreateIndirect, "Button", ID_BUTTON_5, 280, 155, 103, 71, 0, 0x0, 0 },
 	{ TEXT_CreateIndirect, "Text", ID_TEXT_1, 317, 16, 63, 20, 0, 0x64, 0 },
-	// USER START (Optionally insert additional widgets)
-	// USER END
+
 };
 
 /*********************************************************************
@@ -83,16 +82,19 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 // USER START (Optionally insert additional static code)
 // USER END
 
-/*********************************************************************
-*
-*       _cbDialog
+/*
+*********************************************************************************************************
+*	函 数 名: _cbDialog
+*	功能说明: 对话框回调函数
+*	形    参: pMsg  回调参数
+*	返 回 值: 无
+*********************************************************************************************************
 */
 static void _cbDialog(WM_MESSAGE * pMsg) {
-	WM_HWIN hItem,hItem1;
+	WM_HWIN hItem, hItem1;
 	int     NCode;
 	int     Id;
-	// USER START (Optionally insert additional variables)
-	// USER END
+
 
 	switch (pMsg->MsgId) {
 	case WM_INIT_DIALOG:
@@ -104,183 +106,184 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 //		TEXT_SetText(hItem, "Lannge");
 //		TEXT_SetFont(hItem, GUI_FONT_32B_ASCII);
 //		TEXT_SetTextColor(hItem, GUI_MAKE_COLOR(0xffffffff));
-		
+
 		//
-		// Initialization of 'Button'
+		// 初始按钮控件 INPUT
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_0);
 		BUTTON_SetText(hItem, "INPUT");
 		BUTTON_SetFont(hItem, Font_Text);
+
 		//
-		// Initialization of 'Button'
+		// 初始按钮控件 COAX_IN
 		//
 		hItem1 = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_1);
 		BUTTON_SetText(hItem1, "COAX_IN");
 		BUTTON_SetFont(hItem1, Font_Text);
+
 		//
-		// Initialization of 'Button'
+		// 初始按钮控件 Gen_Out
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_2);
 		BUTTON_SetFont(hItem, Font_Text);
 		BUTTON_SetText(hItem, "Gen_Out");
+
 		//
-		// Initialization of 'Button'
+		// 初始按钮控件 OUTPUT
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_3);
 		BUTTON_SetText(hItem, "OUTPUT");
 		BUTTON_SetFont(hItem, Font_Text);
+
 		//
-		// Initialization of 'Button'
+		// 初始按钮控件 SYSTEM
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_4);
 		BUTTON_SetText(hItem, "SYSTEM");
 		BUTTON_SetFont(hItem, Font_Text);
+
 		//
-		// Initialization of 'Button'
+		// 初始按钮控件 MODE
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_5);
 		BUTTON_SetFont(hItem, Font_Text);
 		BUTTON_SetText(hItem, "MODE");
+
 		//
-		// Initialization of 'Text'
+		// 初始Text控件
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_1);
 		TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
 		TEXT_SetText(hItem, "00:00");
 		TEXT_SetFont(hItem, GUI_FONT_24_1);
 		TEXT_SetTextColor(hItem, GUI_MAKE_COLOR(0xffffffff));
-		// USER START (Optionally insert additional code for further widget initialization)
-		// USER END
 		break;
+		
+//	case WM_KEY:
+//		switch (((WM_KEY_INFO*)(pMsg->Data.p))->Key) //获得关于按键信息的值
+//		{
+//
+//		}
+//		break;
+
 	case WM_NOTIFY_PARENT:
 		Id = WM_GetId(pMsg->hWinSrc);
 		NCode = pMsg->Data.v;
-		switch (Id) {
-		case ID_BUTTON_0: // Notifications sent by 'INPUT'
+		switch (Id)
+		{
+		case ID_BUTTON_0:
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-				// USER START (Optionally insert code for reacting on notification message)
+
+				/* 关闭当前对话框， 创建对话框2 */
+
 				// USER END
 				break;
 			case WM_NOTIFICATION_RELEASED:
-				// USER START (Optionally insert code for reacting on notification message)
-//				CreateIN_AuxMixerGain();	//新的界面
-//				GUI_EndDialog(pMsg->hWin, 0); //结束现在的界面
+                GUI_EndDialog(pMsg->hWin, 0); //结束本界面
+                hWin_now = CreateINPUT_CHANNEL(); //显示子界面
 				break;
-				// USER END
-				break;
-				// USER START (Optionally insert additional code for further notification handling)
-				// USER END
 			}
 			break;
 		case ID_BUTTON_1: // Notifications sent by 'Button'
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+//                GUI_EndDialog(pMsg->hWin, 0); //结束本界面
+//                Create_COAX_face();          //下一个界面
 				break;
 			case WM_NOTIFICATION_RELEASED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
-				// USER START (Optionally insert additional code for further notification handling)
-				// USER END
+
 			}
 			break;
-		case ID_BUTTON_2: // Notifications sent by 'Button'
+		case ID_BUTTON_2:
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+//                GUI_EndDialog(pMsg->hWin,0);
+//                Create_Gen_face();
 				break;
 			case WM_NOTIFICATION_RELEASED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
-				// USER START (Optionally insert additional code for further notification handling)
-				// USER END
+
 			}
 			break;
-		case ID_BUTTON_3: // Notifications sent by 'Button'
+		case ID_BUTTON_3:
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+//                GUI_EndDialog(pMsg->hWin,0); //结束当前页面
+//                CreateOut_face();            //输出子界面
 				break;
 			case WM_NOTIFICATION_RELEASED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
-				// USER START (Optionally insert additional code for further notification handling)
-				// USER END
+
 			}
 			break;
-		case ID_BUTTON_4: // Notifications sent by 'Button'
+		case ID_BUTTON_4:
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
 			case WM_NOTIFICATION_RELEASED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
-				// USER START (Optionally insert additional code for further notification handling)
-				// USER END
+
 			}
 			break;
-		case ID_BUTTON_5: // Notifications sent by 'Button'
+		case ID_BUTTON_5:
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
 			case WM_NOTIFICATION_RELEASED:
-				// USER START (Optionally insert code for reacting on notification message)
-				// USER END
+
 				break;
-				// USER START (Optionally insert additional code for further notification handling)
-				// USER END
+
 			}
 			break;
-			// USER START (Optionally insert additional code for further Ids)
-			// USER END
+
 		}
 		break;
-		// USER START (Optionally insert additional message handling)
-		// USER END
+
 	case WM_PAINT:
-		
-//		GUI_SetBkColor(GUI_BLACK);
-//		GUI_Clear();  //全屏黑色
-//		GUI_DrawGradientRoundedV(0, 0, 399, 50, 5, 0xC0CEDC, GUI_BLACK); //渐变
+
+		GUI_SetBkColor(GUI_BLACK);
+		GUI_Clear();  //全屏黑色
+		GUI_DrawGradientRoundedV(0, 0, 399, 50, 0, 0xC0CEDC, GUI_BLACK); //渐变
 		//
-		GUI_DrawGradientRoundedV(0, 0, 399, 239, 0, 0xC0CEDC, GUI_BLACK);
+//		GUI_DrawGradientRoundedV(0, 0, 399, 239, 0, 0xC0CEDC, GUI_BLACK);
 		GUI_SetPenSize(3);
 		GUI_SetColor(GUI_RED);
-		GUI_DrawLine(0,50,400,50);  //画红线
+		GUI_DrawLine(0, 50, 400, 50); //画红线
 
-		GUI_DrawBitmap(&bmlannge_yellow, 100,0);
-//		GUI_DrawBitmap(&bmlannge_white,100,0); //lannge图标
-		
+		GUI_DrawBitmap(&bmlannge_yellow, 100, 0);
+
 		//GUI_DrawGradientH(0, 46, 200 - 1, 240 - 4, 0xdda0dd, 0xe14169);
 		//GUI_DrawGradientH(200, 46, 400 - 1, 240 - 4, 0xe14169, 0xdda0dd);
 		break;
 	
-	case WM_KEY:
-		switch (((WM_KEY_INFO*)(pMsg->Data.p))->Key)
-		{
-			case GUI_KEY_ESCAPE:
-				GUI_EndDialog(pMsg->hWin, 1);
-				break;
-			case GUI_KEY_ENTER:
-				GUI_EndDialog(pMsg->hWin, 0);
-				break;
-			case GUI_KEY_RIGHT:
-				WM_SetFocus(hItem1);
-				break;
-		}
+/***************************************************************************************/
+	//以下为自定义信息
+	
+	case MSG_KNOB_CONTROL_LEFT:
+		GUI_SendKeyMsg(GUI_KEY_TAB, 1);     //下一个聚焦点
 		break;
+	
+	case MSG_KNOB_CONTROL_RIGHT:
+		GUI_SendKeyMsg(GUI_KEY_BACKTAB, 1); //上一个聚焦
+		break;
+	
+	case MSG_KEY_CONTROL:
+		GUI_SendKeyMsg(GUI_KEY_ENTER, 1);   //确定
+		break;
+	
+	case MSG_KEY_ESC:
+		GUI_SendKeyMsg(GUI_KEY_ESCAPE, 1);  //退出
+		break;
+	
+	
 	default:
 		WM_DefaultProc(pMsg);
 		break;
@@ -300,25 +303,11 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 WM_HWIN CreateMainface(void);
 WM_HWIN CreateMainface(void) {
 	WM_HWIN hWin;
-	//设置聚焦框颜色
-	BUTTON_SKINFLEX_PROPS Props;
-	BUTTON_GetSkinFlexProps(&Props, BUTTON_SKINFLEX_PI_FOCUSSED); //聚焦的状态
-	Props.aColorFrame[0] = GUI_GREEN; //绿色
-	Props.aColorFrame[1] = GUI_BLACK; //黑色
-	Props.aColorFrame[2] = GUI_RED;
-	Props.aColorLower[0] = GUI_RED;
-	Props.aColorLower[1] = GUI_RED;
-	Props.aColorUpper[0] = GUI_RED;
-	Props.aColorUpper[1] = GUI_RED;
-	BUTTON_SetSkinFlexProps(&Props, BUTTON_SKINFLEX_PI_FOCUSSED);
 	/////////////
 	hWin = GUI_CreateDialogBox(_aDialogCreate, GUI_COUNTOF(_aDialogCreate), _cbDialog, WM_HBKWIN, 0, 0);
-	
-	
+
 	return hWin;
 }
 
-// USER START (Optionally insert additional public code)
-// USER END
 
 /*************************** End of file ****************************/

@@ -43,8 +43,12 @@ typedef enum
 {
     Encoder_static = 0,  //唅聽噙砦
 //    Encoder_press,   //唅聽偌狟
-    Encoder_left,   //唅聽衵蛌
-    Encoder_right,    //唅聽酘蛌
+    Encoder1_left,     //唅聽衵蛌
+    Encoder1_right,    //唅聽酘蛌
+	Encoder2_left,     //唅聽衵蛌
+    Encoder2_right,    //唅聽酘蛌
+	Encoder3_left,     //唅聽衵蛌
+    Encoder3_right,    //唅聽酘蛌
 } Encoder_State;
 
 

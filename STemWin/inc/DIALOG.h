@@ -62,6 +62,10 @@ Purpose     : Dialog box include
 #include "TREEVIEW.h"
 #include "KNOB.h"
 
+//自己加的
+#include "Interface.h"
+extern I32 shengyuneicun;
+
 #if GUI_WINSUPPORT
 
 #if defined(__cplusplus)

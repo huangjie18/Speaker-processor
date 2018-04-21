@@ -17,15 +17,25 @@ static void LCD_GPIO_Config(void)
     /* config lcd gpio clock base on FSMC */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD 
 	| RCC_APB2Periph_GPIOE , ENABLE);
+	
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
     
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     
-    /* config tft back_light gpio base on the PT4101 BL*/
+    
+	//LCD背光灯
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;		
     GPIO_Init(GPIOD, &GPIO_InitStructure);
+	
+	//模板要
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 ; 	 
+    GPIO_Init(GPIOA, &GPIO_InitStructure);  		   
+    GPIO_SetBits(GPIOA,GPIO_Pin_1);
+	//
+	
     
-	/* config tft RST gpio */
+	//LCD复位引脚
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12; 	 
     GPIO_Init(GPIOD, &GPIO_InitStructure); 	   
     
@@ -55,15 +65,19 @@ static void LCD_GPIO_Config(void)
 	 * PD7-FSMC_NE1  :LCD-CS
    * PD11-FSMC_A16 :LCD-DC
 	 */
+	 //FSMC_NOE   RD
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4; 
     GPIO_Init(GPIOD, &GPIO_InitStructure);
     
+	//FSMC_NWE     WR
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5; 
     GPIO_Init(GPIOD, &GPIO_InitStructure);
     
+	//FSMC_NE1     CE
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7; 
     GPIO_Init(GPIOD, &GPIO_InitStructure);  
     
+	//FSMC_A16     RS
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11 ; 
     GPIO_Init(GPIOD, &GPIO_InitStructure);
 	/* tft control gpio init */	 
@@ -255,6 +269,13 @@ static void LCD_rst(void)
 	delay_ms(100);
 	GPIO_SetBits(GPIOD,GPIO_Pin_12);
 	delay_ms(100);
+	
+	//模板用
+	GPIO_ResetBits(GPIOD,GPIO_Pin_13);
+	delay_ms(100);
+	GPIO_SetBits(GPIOD,GPIO_Pin_13);
+	delay_ms(100);
+	//
 }
 
 void LCD_WriteReg(u16 LCD_Reg,u16 LCD_RegValue)
