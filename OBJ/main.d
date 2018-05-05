@@ -29,8 +29,8 @@
 ..\obj\main.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 ..\obj\main.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 ..\obj\main.o: ..\SYSTEM\delay\delay.h
-..\obj\main.o: ..\HARDWARE\LCD\ILI93xx.h
 ..\obj\main.o: ..\SYSTEM\sys\sys.h
+..\obj\main.o: ..\HARDWARE\LCD\ILI93xx.h
 ..\obj\main.o: ..\MALLOC\malloc.h
 ..\obj\main.o: ..\STemWin\inc\GUI.h
 ..\obj\main.o: ..\STemWin\inc\GUI_ConfDefaults.h

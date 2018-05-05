@@ -40,6 +40,7 @@
 
 // USER START (Optionally insert additional defines)
 static  int  Id2=0; //检测是否是关闭键
+char INPUT_channel = 0 ; //输入通道标志
 // USER END
 
 /*********************************************************************
@@ -63,7 +64,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] =
     { BUTTON_CreateIndirect, "INPUT_2", ID_BUTTON_1, 143, 17, 103, 71, 0, 0x0, 0 },
     { BUTTON_CreateIndirect, "INPUT_3", ID_BUTTON_2, 272, 17, 103, 71, 0, 0x0, 0 },
     { BUTTON_CreateIndirect, "INPUT_4", ID_BUTTON_3, 16, 105, 103, 71, 0, 0x0, 0 },
-    { BUTTON_CreateIndirect, "INPUT_5", ID_BUTTON_4, 143, 106, 103, 71, 0, 0x0, 0 },
+    { BUTTON_CreateIndirect, "INPUT_5", ID_BUTTON_4, 143, 105, 103, 71, 0, 0x0, 0 },
     { BUTTON_CreateIndirect, "INPUT_6", ID_BUTTON_5, 272, 105, 103, 71, 0, 0x0, 0 },
     // USER START (Optionally insert additional widgets)
     // USER END
@@ -164,6 +165,34 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
         BUTTON_SetFont(hItem, GUI_FONT_20_1);
         // USER START (Optionally insert additional code for further widget initialization)
         // USER END
+		//添加一个聚焦
+		switch(INPUT_channel)
+		{
+			case 0:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_0);
+				break;
+			
+			case 1:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_1);
+				break;
+			
+			case 2:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_2);
+				break;
+			
+			case 3:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_3);
+				break;
+			
+			case 4:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_4);
+				break;
+			
+			case 5:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_5);
+				break;
+		}
+		WM_SetFocus(hItem); //聚焦
         break;
 
     case WM_PAINT:
@@ -196,6 +225,7 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_RELEASED:
                 // USER START (Optionally insert code for reacting on notification message)
+				INPUT_channel = 0;
                 GUI_EndDialog(pMsg->hWin, 0);
                 hWin_now = Createthird_layer(); //显示第三页面
 			
@@ -214,6 +244,9 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_RELEASED:
                 // USER START (Optionally insert code for reacting on notification message)
+				INPUT_channel = 1;
+                GUI_EndDialog(pMsg->hWin, 0);
+                hWin_now = Createthird_layer(); //显示第三页面
                 // USER END
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -229,6 +262,9 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_RELEASED:
                 // USER START (Optionally insert code for reacting on notification message)
+				INPUT_channel = 2;
+                GUI_EndDialog(pMsg->hWin, 0);
+                hWin_now = Createthird_layer(); //显示第三页面
                 // USER END
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -244,6 +280,9 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_RELEASED:
                 // USER START (Optionally insert code for reacting on notification message)
+				INPUT_channel = 3;
+                GUI_EndDialog(pMsg->hWin, 0);
+                hWin_now = Createthird_layer(); //显示第三页面
                 // USER END
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -259,6 +298,9 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_RELEASED:
                 // USER START (Optionally insert code for reacting on notification message)
+				INPUT_channel = 4;
+                GUI_EndDialog(pMsg->hWin, 0);
+                hWin_now = Createthird_layer(); //显示第三页面
                 // USER END
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -274,6 +316,9 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_RELEASED:
                 // USER START (Optionally insert code for reacting on notification message)
+				INPUT_channel = 5;
+                GUI_EndDialog(pMsg->hWin, 0);
+                hWin_now = Createthird_layer(); //显示第三页面
                 // USER END
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -288,6 +333,8 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
     // USER END
 		
 /******************************自己定义的信息*********************************************/
+		
+		
 	case MSG_KNOB_CONTROL_LEFT:
 		GUI_SendKeyMsg(GUI_KEY_TAB, 1);     //下一个聚焦点
 		break;
@@ -303,7 +350,25 @@ static void _cbDialog2(WM_MESSAGE * pMsg)
 	case MSG_KEY_ESC:
 		GUI_SendKeyMsg(GUI_KEY_ESCAPE, 1); //ESC
 		break;
-		
+	
+//	//INPUT
+	case MSG_KEY_INPUT:
+		GUI_SendKeyMsg(GUI_KEY_ENTER, 1);  //确定
+		break;
+	
+	//OUT
+	case MSG_KEY_OUTPUT:
+		OUTPUT_channel = 0;
+        GUI_EndDialog(pMsg->hWin,0);     //结束当前页面
+        hWin_now = CreateOut_face();     //输出OUT子界面
+		break;
+	
+	//SYS
+	case MSG_KEY_SYSTEM:
+		GUI_EndDialog(pMsg->hWin,0);
+		hWin_now = CreateSystem();
+		break;
+/*******************************END*****************************************/
     default:
         WM_DefaultProc(pMsg);
         break;

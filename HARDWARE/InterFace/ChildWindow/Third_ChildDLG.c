@@ -99,11 +99,11 @@ static void _ShowSlidervalue(void)
     GUI_SetTextMode(GUI_TM_TRANS);   //设置显示模式为透明模式即是不会覆盖背景
     GUI_SetFont(&GUI_Font20_1);      //显示字体大小
     GUI_GotoXY(136,7);               //设置第一个滑块位置
-    GUI_DispDecMin(Input1_data1.Aux1MixerGain); //显示第一个滑块值
+    GUI_DispDecMin(Input1_data1[INPUT_channel].Aux1MixerGain); //显示第一个滑块值
     GUI_GotoXY(136,79);              //设置第二个滑块位置
-    GUI_DispDecMin(Input1_data1.Aux2MixerGain); //显示第二个滑块值
+    GUI_DispDecMin(Input1_data1[INPUT_channel].Aux2MixerGain); //显示第二个滑块值
     GUI_GotoXY(136,155);             //设置第三个滑块位置
-    GUI_DispDecMin(Input1_data1.Aux3MixerGain); //显示第三个滑块值
+    GUI_DispDecMin(Input1_data1[INPUT_channel].Aux3MixerGain); //显示第三个滑块值
 }
 
 /*********************************************************************
@@ -125,17 +125,17 @@ static void _cbDialog(WM_MESSAGE * pMsg)
         //滑块1的范围调整
         hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_0); //获得句柄
         SLIDER_SetRange(hItem,-80,0); //设置滑块范围
-        SLIDER_SetValue(hItem,Input1_data1.Aux1MixerGain); //设置滑块的值
+        SLIDER_SetValue(hItem,Input1_data1[INPUT_channel].Aux1MixerGain); //设置滑块的值
 
         //滑块2的范围调整
         hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_1); //获得句柄
         SLIDER_SetRange(hItem,-80,0); //设置滑块范围
-        SLIDER_SetValue(hItem,Input1_data1.Aux2MixerGain); //设置滑块的值
+        SLIDER_SetValue(hItem,Input1_data1[INPUT_channel].Aux2MixerGain); //设置滑块的值
 
         //滑块3的范围调整
         hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_2); //获得句柄
         SLIDER_SetRange(hItem,-80,0); //设置滑块范围
-        SLIDER_SetValue(hItem,Input1_data1.Aux3MixerGain); //设置滑块的值
+        SLIDER_SetValue(hItem,Input1_data1[INPUT_channel].Aux3MixerGain); //设置滑块的值
 
         //
         // Initialization of 'Text'
@@ -177,7 +177,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
             case WM_NOTIFICATION_VALUE_CHANGED: //滑块变动
 
                 hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_0); //获得滑块句柄
-                Input1_data1.Aux1MixerGain = SLIDER_GetValue(hItem); //保存滑块值
+                Input1_data1[INPUT_channel].Aux1MixerGain = SLIDER_GetValue(hItem); //保存滑块值
                 WM_InvalidateRect(pMsg->hWin,&Rect_3[0]); //无效化该值重新刷新显示值
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -197,7 +197,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_VALUE_CHANGED:
                 hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_1); //获得滑块句柄
-                Input1_data1.Aux2MixerGain = SLIDER_GetValue(hItem); //保存滑块值
+                Input1_data1[INPUT_channel].Aux2MixerGain = SLIDER_GetValue(hItem); //保存滑块值
                 WM_InvalidateRect(pMsg->hWin,&Rect_3[1]); //无效化该值重新刷新显示值
                 break;
                 // USER START (Optionally insert additional code for further notification handling)
@@ -217,7 +217,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
                 break;
             case WM_NOTIFICATION_VALUE_CHANGED:
                 hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_2); //获得滑块句柄
-                Input1_data1.Aux3MixerGain = SLIDER_GetValue(hItem); //保存滑块值
+                Input1_data1[INPUT_channel].Aux3MixerGain = SLIDER_GetValue(hItem); //保存滑块值
                 WM_InvalidateRect(pMsg->hWin,&Rect_3[2]); //无效化该值重新刷新显示值
                 break;
                 // USER START (Optionally insert additional code for further notification handling)

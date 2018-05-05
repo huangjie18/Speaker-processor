@@ -9,6 +9,12 @@
 #define LED3_Off  GPIO_ResetBits(GPIOC,GPIO_Pin_2)
 #define LED4_On   GPIO_SetBits(GPIOC, GPIO_Pin_3)
 #define LED4_Off  GPIO_ResetBits(GPIOC,GPIO_Pin_3)
+#define LED PAout(0)
+
+#define Out_led_On  LED1_On
+#define Esc_led_On  LED2_On
+#define Sys_led_On  LED3_On
+#define Input_led_On LED4_On
 
 void LED_GPIO_Init(void);
 

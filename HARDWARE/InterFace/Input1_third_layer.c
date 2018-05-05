@@ -92,7 +92,15 @@ Input_data Input1_data1[8]=
 *
 **********************************************************************
 */
-
+static const char input_esc[][11] =
+{
+	"Input1_Esc",
+	"Input2_Esc",
+	"Input3_Esc",
+	"Input4_Esc",
+	"Input5_Esc",
+	"Input6_Esc",
+};
 // USER START (Optionally insert additional static data)
 // USER END
 
@@ -150,7 +158,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
         LISTBOX_AddString(hItem, "SET_3");
         LISTBOX_AddString(hItem, "SET_4");
         LISTBOX_AddString(hItem, "SET_5");
-        LISTBOX_AddString(hItem, "Esc");
+        LISTBOX_AddString(hItem, input_esc[INPUT_channel]);//显示Esc
 //        LISTBOX_EnableWrapMode(hItem, 1); //启用自动换行模式,会提示要删除的块已经在_Free()中
         LISTBOX_SetFont(hItem, GUI_FONT_20_1);  //设置字体
 //
@@ -203,6 +211,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
             break;
         }
         break;
+		
     case WM_NOTIFY_PARENT:
         Id    = WM_GetId(pMsg->hWinSrc);
         NCode = pMsg->Data.v;
@@ -313,11 +322,11 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 			GUI_SendKeyMsg(GUI_KEY_SPACE, 1);   //切换 CHECKBOX 控件的选中状态。
 			if(CHECKBOX_GetState(Get_child_hWin(2))==0)
 			{
-				Input1_data1.Invert = 0;  //复选框状态为未选中
+				Input1_data1[INPUT_channel].Invert = 0;  //复选框状态为未选中
 			}
 			else if(CHECKBOX_GetState(Get_child_hWin(2))==1)
 			{
-				Input1_data1.Invert = 1;  //复选框状态为选中
+				Input1_data1[INPUT_channel].Invert = 1;  //复选框状态为选中
 			}
 		}
 		else 
@@ -329,7 +338,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 	//CONTROL左转
 	case MSG_KNOB_CONTROL_LEFT:
 		//不同的聚焦要不同的信息
-		if(Input1_third_data.Window_Switch == list_box) //列表框
+		if(WM_HasFocus(WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0))) //列表框
 		{
 			GUI_SendKeyMsg(GUI_KEY_DOWN, 1);    //向下
 		}
@@ -341,7 +350,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 	
 	//CONTROL右转
 	case MSG_KNOB_CONTROL_RIGHT:
-		if(Input1_third_data.Window_Switch == list_box)
+		if(WM_HasFocus(WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0)))
 		{
 			GUI_SendKeyMsg(GUI_KEY_UP, 1);      //向上
 		}
@@ -351,11 +360,15 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 		}
 		break;
 		
-	
+	//OUT左转
 	case MSG_KNOB_OUT_LEFT:
 		if(Input1_third_data.Sel != 1)
 		{
 			GUI_SendKeyMsg(GUI_KEY_RIGHT,1); //滑块左移
+		}
+		else if(WM_HasFocus(WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0))) //检测是否在选项框
+		{
+			
 		}
 		else if(Input1_third_data.Sel == 1)
 		{
@@ -363,10 +376,15 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 		}
 	break;
 	
+	//OUT右转
 	case MSG_KNOB_OUT_RIGHT:
 		if(Input1_third_data.Sel != 1)
 		{
 			GUI_SendKeyMsg(GUI_KEY_LEFT,1); //滑块右移
+		}
+		else if(WM_HasFocus(WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0))) //检测是否在选项框
+		{
+			
 		}
 		else if(Input1_third_data.Sel == 1)
 		{
@@ -374,6 +392,23 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 		}
 	break;
 		
+	//INPUT
+	case MSG_KEY_INPUT:
+		WM_SendMessageNoPara(hWin_now, MSG_KEY_CONTROL);
+		break;
+	
+	//OUT
+	case MSG_KEY_OUTPUT:
+		OUTPUT_channel = 0;
+        GUI_EndDialog(pMsg->hWin,0);     //结束当前页面
+        hWin_now = CreateOut_face();     //输出OUT子界面
+		break;
+	
+	//SYS
+	case MSG_KEY_SYSTEM:
+		GUI_EndDialog(pMsg->hWin,0);
+		hWin_now = CreateSystem();
+		break;
 /**************************************END***********************************************/
     default:
         WM_DefaultProc(pMsg);

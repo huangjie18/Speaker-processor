@@ -98,17 +98,17 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 	//RMSTC
 	hItem = WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_0);
     SPINBOX_SetFont(hItem,GUI_FONT_16B_1); //设置字体
-    SPINBOX_SetValue(hItem,Input1_data1.RMSTC); //设置RMSTC值
+    SPINBOX_SetValue(hItem,Input1_data1[INPUT_channel].RMSTC); //设置RMSTC值
 	
     //Hold
 	hItem = WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_1);
     SPINBOX_SetFont(hItem,GUI_FONT_16B_1); //设置字体
-    SPINBOX_SetValue(hItem,Input1_data1.Hold); //设置Hold值
+    SPINBOX_SetValue(hItem,Input1_data1[INPUT_channel].Hold); //设置Hold值
   
 	//Decay
 	hItem = WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_2);
     SPINBOX_SetFont(hItem,GUI_FONT_16B_1); //设置字体
-    SPINBOX_SetValue(hItem,Input1_data1.Decay); //设置Decay值
+    SPINBOX_SetValue(hItem,Input1_data1[INPUT_channel].Decay); //设置Decay值
     //
     // Initialization of 'Button'
     //
@@ -162,7 +162,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
         break;
       case WM_NOTIFICATION_VALUE_CHANGED: //数值改变
 		  //把当前值保存下来
-		  Input1_data1.RMSTC = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_0));
+		  Input1_data1[INPUT_channel].RMSTC = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_0));
         // USER START (Optionally insert code for reacting on notification message)
         // USER END
         break;
@@ -185,7 +185,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
         // USER END
         break;
       case WM_NOTIFICATION_VALUE_CHANGED:
-		  Input1_data1.Hold = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_1));
+		  Input1_data1[INPUT_channel].Hold = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_1));
         // USER START (Optionally insert code for reacting on notification message)
         // USER END
         break;
@@ -208,7 +208,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
         // USER END
         break;
       case WM_NOTIFICATION_VALUE_CHANGED:
-		  Input1_data1.Decay = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_2));
+		  Input1_data1[INPUT_channel].Decay = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_2));
         // USER START (Optionally insert code for reacting on notification message)
         // USER END
         break;

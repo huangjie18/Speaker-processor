@@ -46,15 +46,16 @@ int main(void)
     u8 key_value1 = 0; 
     u8 key_value2 = 0;
 	u8 key_value3 = 0;
+	u16 count=0;
     GUI_COLOR color;
 	
 	
-    delay_init(72);
+    delay_init();
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-    LED_GPIO_Init();        //LED初始化,全亮
+    LED_GPIO_Init();        //按键LED初始化,全亮
     KEY_GPIO_Init();        //按键初始化
     Encoder_GPIO_Init();    //编码器初始化
-//  Lcd_Initialize();       //LCD初始化
+	Lcd_Initialize();       //LCD初始化
     TIM3_Int_Init(999, 71); //1KHZ 定时器1ms
     my_mem_init(SRAMIN);
 
@@ -63,7 +64,6 @@ int main(void)
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC,
                           ENABLE); //使能CRC时钟，否则STemWin不能使用
 //  GPIO_TEST();  //测试引脚是否短路
-
 
     MainTask(); //主程序
 //  GUI_Init();
@@ -82,11 +82,13 @@ int main(void)
         {
 
             //旋钮检测
+			//有问题，里面有while循环
             key_value1 = Encoder_Check_One();   //旋钮1检测
 			key_value2 = Encoder_Check_Two();   //旋钮2检测
 			key_value3 = Encoder_Check_Three(); //旋钮3检测
 			//此程序一次只检测一个旋钮动作
-            if(key_value1 || key_value2 || key_value3) //有动作
+            if((key_value1!=Encoder_static) || (key_value2!=Encoder_static)
+				|| (key_value3!=Encoder_static)) //有动作
             {
 				if(key_value1)
 				{
@@ -104,7 +106,11 @@ int main(void)
                 switch(key_value)
                 {
 					case Encoder1_left:
-						WM_SendMessageNoPara(hWin_now, MSG_KNOB_INPUT_LEFT); //输入旋钮
+						WM_SendMessageNoPara(hWin_now, MSG_KNOB_INPUT_LEFT); //输入旋钮发送的信息
+						//会直接执行被聚焦窗口的回调函数
+					//调用过程：GUI_SendKeyMsg->WM_SendMessage->回调函数->发送WM_NOTIFY_PARENT
+					//给父窗口
+					
 						break;
 					
 					case Encoder1_right:
@@ -129,6 +135,9 @@ int main(void)
                     default:
                         break;
                 }
+//				WM_Exec();
+//				delay_ms(150);
+				
             }
 			
 
@@ -140,23 +149,29 @@ int main(void)
                 {
                     //输入按钮
                     case KEY_INPUT:
-//                  GUI_SendKeyMsg(GUI_KEY_ENTER, 1);
                         WM_SendMessageNoPara(hWin_now, MSG_KEY_INPUT);
+						GPIOC->ODR = (GPIOA->IDR & 0xfff0);  //先把灯全灭
+						Input_led_On; //灯亮
                         break;
 
                     //退出按钮
                     case KEY_ESC:
-//                  GUI_SendKeyMsg(GUI_KEY_ESCAPE, 1);
+						GPIOC->ODR = (GPIOA->IDR & 0xfff0);  //先把灯全灭
+						Esc_led_On; //灯亮
                         WM_SendMessageNoPara(hWin_now, MSG_KEY_ESC);
                         break;
 
                     //输出按钮
                     case KEY_OUTPUT:
+						GPIOC->ODR = (GPIOA->IDR & 0xfff0);  //先把灯全灭
+						Out_led_On; //灯亮
                         WM_SendMessageNoPara(hWin_now, MSG_KEY_OUTPUT);
                         break;
 
                     //系统按钮
                     case KEY_SYSTEM:
+						GPIOC->ODR = (GPIOA->IDR & 0xfff0);  //先把灯全灭
+						Sys_led_On; //灯亮
                         WM_SendMessageNoPara(hWin_now, MSG_KEY_SYSTEM);
                         break;
 
@@ -183,11 +198,25 @@ int main(void)
         }
 		else   //无效则刷黑屏
 		{
-			GUI_SetBkColor(GUI_BLACK);
+			GUI_SetBkColor(GUI_RED);
 			GUI_Clear();
+			
+			GUI_SetColor(GUI_BLACK);
+			GUI_GotoXY(0,0);
+			GUI_DispDecMin(GUI_ALLOC_GetNumFreeBytes());
 		}
 		
-        GUI_Delay(10);
+		if(count==1000)
+		{
+			count = 0;
+			LED = ~LED;  //LED反转，用来检测系统是否正常运行
+		}
+        GUI_Delay(1);
+		count++;
+
+
+//		delay_ms(1000);
+//		LED = ~LED;
 
     }
 

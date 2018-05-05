@@ -22,123 +22,18 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 D:\GitHub\Speaker-processor\USER\Processor.uvprojx
-Project File Date:  04/21/2018
+Project File Date:  05/05/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Processor'
-compiling main.c...
-main.c(49): warning:  #177-D: variable "color" was declared but never referenced
-      GUI_COLOR color;
-main.c: 1 warning, 0 errors
-compiling test.c...
-..\HARDWARE\Test\test.c(97): warning:  #177-D: variable "key_value" was declared but never referenced
-        u8 key_value;
-..\HARDWARE\Test\test.c: 1 warning, 0 errors
-compiling Main_face.c...
-compiling Flex_set.c...
-compiling Input_face.c...
-..\HARDWARE\InterFace\Input_face.c(42): warning:  #177-D: variable "Id2" was declared but never referenced
-  static  int  Id2=0; //?觳??欠??枪乇占?
-..\HARDWARE\InterFace\Input_face.c: 1 warning, 0 errors
-compiling Input1_third_layer.c...
-..\HARDWARE\InterFace\Input1_third_layer.c(316): error:  #154: expression must have struct or union type
-                                Input1_data1.Invert = 0;  //澶?閫?妗?鐘?鎬?涓?鏈?閫?涓?
-..\HARDWARE\InterFace\Input1_third_layer.c(320): error:  #154: expression must have struct or union type
-                                Input1_data1.Invert = 1;  //澶?閫?妗?鐘?鎬?涓?閫?涓?
-..\HARDWARE\InterFace\Input1_third_layer.c(131): warning:  #550-D: variable "hchild_check" was set but never used
-      WM_HWIN hchild_check;
-..\HARDWARE\InterFace\Input1_third_layer.c: 1 warning, 2 errors
-compiling First_ChildDLG.c...
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c(126): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Gain); //??示值
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c(159): warning:  #111-D: statement is unreachable
-              break;
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c(135): warning:  #177-D: variable "rSlider" was declared but never referenced
-      GUI_RECT rSlider;
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c(192): error:  #154: expression must have struct or union type
-              SLIDER_SetValue(hItem, Input1_data1.Gain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c(217): error:  #154: expression must have struct or union type
-              CHECKBOX_SetState(hItem, Input1_data1.Invert); //???酶?选?虻?前状态
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c(262): error:  #154: expression must have struct or union type
-                              Input1_data1.Gain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\First_ChildDLG.c: 2 warnings, 4 errors
-compiling Second_ChildDLG.c...
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c(101): error:  #154: expression must have struct or union type
-      SPINBOX_SetValue(hItem,Input1_data1.RMSTC); //????RMSTC值
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c(106): error:  #154: expression must have struct or union type
-      SPINBOX_SetValue(hItem,Input1_data1.Hold); //????Hold值
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c(111): error:  #154: expression must have struct or union type
-      SPINBOX_SetValue(hItem,Input1_data1.Decay); //????Decay值
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c(165): error:  #154: expression must have struct or union type
-                  Input1_data1.RMSTC = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_0));
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c(188): error:  #154: expression must have struct or union type
-                  Input1_data1.Hold = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_1));
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c(211): error:  #154: expression must have struct or union type
-                  Input1_data1.Decay = SPINBOX_GetValue(WM_GetDialogItem(pMsg->hWin, ID_SPINBOX_2));
-..\HARDWARE\InterFace\ChildWindow\Second_ChildDLG.c: 0 warnings, 6 errors
-compiling Third_ChildDLG.c...
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(102): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux1MixerGain); //??示??一?龌?值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(104): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux2MixerGain); //??示?诙龌?值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(106): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux3MixerGain); //??示???龌?值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(128): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux1MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(133): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux2MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(138): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux3MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(180): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux1MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(200): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux2MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c(220): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux3MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Third_ChildDLG.c: 0 warnings, 9 errors
-compiling Four_ChildDLG.c...
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(102): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux4MixerGain); //??示??一?龌?值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(104): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux5MixerGain); //??示?诙龌?值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(106): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux6MixerGain); //??示???龌?值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(128): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux4MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(133): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux5MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(138): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux6MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(178): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux4MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(198): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux5MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c(218): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux6MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Four_ChildDLG.c: 0 warnings, 9 errors
-compiling Five_ChildDLG.c...
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c(98): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux7MixerGain); //??示??一?龌?值
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c(100): error:  #154: expression must have struct or union type
-      GUI_DispDecMin(Input1_data1.Aux8MixerGain); //??示?诙龌?值
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c(121): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux7MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c(126): error:  #154: expression must have struct or union type
-          SLIDER_SetValue(hItem,Input1_data1.Aux8MixerGain); //???没榈?值
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c(160): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux7MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c(180): error:  #154: expression must have struct or union type
-                  Input1_data1.Aux8MixerGain = SLIDER_GetValue(hItem); //保?婊???值
-..\HARDWARE\InterFace\ChildWindow\Five_ChildDLG.c: 0 warnings, 6 errors
-"..\OBJ\Processor.axf" - 36 Error(s), 6 Warning(s).
+"..\OBJ\Processor.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   D:\GitHub\Speaker-processor\USER\RTE
   C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
 </pre>
 </body>
 </html>

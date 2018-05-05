@@ -14,6 +14,7 @@
 #define ES2_B PEin(3)
 #define ES3_A PEin(2)
 #define ES3_B PEin(1)
+//#define ES3_B GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_1)
 
 enum
 {
@@ -55,7 +56,7 @@ typedef enum
 void KEY_GPIO_Init(void); //°´¼üÓ²¼þ³õÊ¼»¯
 u8 KEY_Scan(u8 mode);     //°´¼üÉ¨Ãèº¯Êý
 void Encoder_GPIO_Init(void);  //±àÂëÆ÷³õÊ¼»¯
-u8 Encoder_Check_One(void);    //ÐýÅ¥1¼ì²â
-u8 Encoder_Check_Two(void);    //ÐýÅ¥2¼ì²â
-u8 Encoder_Check_Three(void);  //ÐýÅ¥3¼ì²â
+Encoder_State Encoder_Check_One(void);    //ÐýÅ¥1¼ì²â
+Encoder_State Encoder_Check_Two(void);    //ÐýÅ¥2¼ì²â
+Encoder_State Encoder_Check_Three(void);  //ÐýÅ¥3¼ì²â
 #endif

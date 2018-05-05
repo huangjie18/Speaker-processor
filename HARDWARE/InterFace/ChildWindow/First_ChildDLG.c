@@ -123,7 +123,7 @@ static void _ShowSlidervalue(void)
     GUI_SetTextMode(GUI_TM_TRANS); //设置透明模式
     GUI_SetFont(&GUI_Font20_1); //设置字体
     GUI_GotoXY(70, 17);  //设置位置
-    GUI_DispDecMin(Input1_data1.Gain); //显示值
+    GUI_DispDecMin(Input1_data1[INPUT_channel].Gain); //显示值
 }
 
 
@@ -189,7 +189,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
             //初始化滑块
             hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_0); //获得滑块句柄
             SLIDER_SetRange(hItem, -80, 0); //设置滑块范围
-            SLIDER_SetValue(hItem, Input1_data1.Gain); //设置滑块的值
+            SLIDER_SetValue(hItem, Input1_data1[INPUT_channel].Gain); //设置滑块的值
 
             //以下尝试自定义皮肤设置
             SLIDER_SetSkin(hItem, _DrawSkin_SLIDER); //绘制回调函数_DrawSkin_SLIDER
@@ -214,7 +214,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
             hItem = WM_GetDialogItem(pMsg->hWin, ID_CHECKBOX_0);
             CHECKBOX_SetText(hItem, "Invert");
             CHECKBOX_SetFont(hItem, GUI_FONT_20_1);
-            CHECKBOX_SetState(hItem, Input1_data1.Invert); //设置复选框当前状态
+            CHECKBOX_SetState(hItem, Input1_data1[INPUT_channel].Invert); //设置复选框当前状态
             //
             // Initialization of 'Text'
             //
@@ -232,9 +232,9 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 
             break;
         case WM_PAINT:
-            GUI_SetBkColor(GUI_BLACK);
-            GUI_Clear();  //全屏黑色
-            GUI_DrawGradientRoundedV(0, 0, 285, 240, 0, 0xC0CEDC, GUI_WHITE); //渐变
+//            GUI_SetBkColor(GUI_BLACK);
+//            GUI_Clear();  //全屏黑色
+//            GUI_DrawGradientRoundedV(0, 0, 285, 240, 0, 0xC0CEDC, GUI_WHITE); //渐变
 
             //显示滑块的值
             _ShowSlidervalue();
@@ -259,7 +259,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
 
                             //处理变动后的结果
                             hItem = WM_GetDialogItem(pMsg->hWin, ID_SLIDER_0); //获得滑块句柄
-                            Input1_data1.Gain = SLIDER_GetValue(hItem); //保存滑块值
+                            Input1_data1[INPUT_channel].Gain = SLIDER_GetValue(hItem); //保存滑块值
                             WM_InvalidateRect(pMsg->hWin, &Rect);
                             // USER END
                             break;

@@ -52,7 +52,7 @@ extern GUI_CONST_STORAGE GUI_BITMAP bmlannge_white;   //白色logo
 *
 **********************************************************************
 */
-
+static char Main_channel=0;
 // USER START (Optionally insert additional static data)
 // USER END
 
@@ -68,7 +68,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 	{ BUTTON_CreateIndirect, "Button", ID_BUTTON_3, 17, 155, 103, 71, 0, 0x0, 0 },
 	{ BUTTON_CreateIndirect, "Button", ID_BUTTON_4, 150, 155, 103, 71, 0, 0x0, 0 },
 	{ BUTTON_CreateIndirect, "Button", ID_BUTTON_5, 280, 155, 103, 71, 0, 0x0, 0 },
-	{ TEXT_CreateIndirect, "Text", ID_TEXT_1, 317, 16, 63, 20, 0, 0x64, 0 },
+//	{ TEXT_CreateIndirect, "Text", ID_TEXT_1, 317, 16, 63, 20, 0, 0x64, 0 },
 
 };
 
@@ -154,9 +154,38 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 		//
 		hItem = WM_GetDialogItem(pMsg->hWin, ID_TEXT_1);
 		TEXT_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
-		TEXT_SetText(hItem, "00:00");
+//		TEXT_SetText(hItem, "00:00");
 		TEXT_SetFont(hItem, GUI_FONT_24_1);
 		TEXT_SetTextColor(hItem, GUI_MAKE_COLOR(0xffffffff));
+		
+		switch(Main_channel)
+		{
+			case 0:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_0);
+				break;
+			
+			case 1:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_1);
+				break;
+			
+			case 2:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_2);
+				break;
+			
+			case 3:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_3);
+				break;
+			
+			case 4:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_4);
+				break;
+			
+			case 5:
+				hItem = WM_GetDialogItem(pMsg->hWin, ID_BUTTON_5);
+				break;
+			
+		}
+		WM_SetFocus(hItem); //聚焦
 		break;
 		
 //	case WM_KEY:
@@ -171,7 +200,7 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 		NCode = pMsg->Data.v;
 		switch (Id)
 		{
-		case ID_BUTTON_0:
+		case ID_BUTTON_0://INPUT
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
 
@@ -179,17 +208,20 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 
 				// USER END
 				break;
-			case WM_NOTIFICATION_RELEASED:
+			case WM_NOTIFICATION_RELEASED: 
+				Main_channel = 0;
+				INPUT_channel = 0;  //输入通道聚焦位置标志
                 GUI_EndDialog(pMsg->hWin, 0); //结束本界面
-                hWin_now = CreateINPUT_CHANNEL(); //显示子界面
+                hWin_now = CreateINPUT_CHANNEL(); //显示INPUT子界面
 				break;
 			}
 			break;
-		case ID_BUTTON_1: // Notifications sent by 'Button'
+		case ID_BUTTON_1: // COAX_IN
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-//                GUI_EndDialog(pMsg->hWin, 0); //结束本界面
-//                Create_COAX_face();          //下一个界面
+				Main_channel = 1;
+                GUI_EndDialog(pMsg->hWin, 0); //结束本界面
+                hWin_now = Create_COAX_face();          //COAX界面
 				break;
 			case WM_NOTIFICATION_RELEASED:
 
@@ -197,11 +229,13 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 
 			}
 			break;
-		case ID_BUTTON_2:
+		case ID_BUTTON_2: //Gen_Out
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-//                GUI_EndDialog(pMsg->hWin,0);
-//                Create_Gen_face();
+				Main_channel = 2;
+				Gen_channel = 0;
+                GUI_EndDialog(pMsg->hWin,0);   //结束本界面
+				hWin_now = CreateGen_Out();
 				break;
 			case WM_NOTIFICATION_RELEASED:
 
@@ -209,11 +243,13 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 
 			}
 			break;
-		case ID_BUTTON_3:
+		case ID_BUTTON_3:  //OUTPUT
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
-//                GUI_EndDialog(pMsg->hWin,0); //结束当前页面
-//                CreateOut_face();            //输出子界面
+				Main_channel = 3;
+				OUTPUT_channel = 0;
+                GUI_EndDialog(pMsg->hWin,0);     //结束当前页面
+                hWin_now = CreateOut_face();     //输出OUT子界面
 				break;
 			case WM_NOTIFICATION_RELEASED:
 
@@ -221,24 +257,28 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 
 			}
 			break;
-		case ID_BUTTON_4:
+		case ID_BUTTON_4: //SYSTEM
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
 
 				break;
 			case WM_NOTIFICATION_RELEASED:
-
+				Main_channel = 4;
+				GUI_EndDialog(pMsg->hWin,0);
+				hWin_now = CreateSystem();
 				break;
 
 			}
 			break;
-		case ID_BUTTON_5:
+		case ID_BUTTON_5:  //MODE
 			switch (NCode) {
 			case WM_NOTIFICATION_CLICKED:
 
 				break;
 			case WM_NOTIFICATION_RELEASED:
-
+				Main_channel = 5;
+				GUI_EndDialog(pMsg->hWin,0);
+				hWin_now = CreateMode();
 				break;
 
 			}
@@ -251,9 +291,9 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 
 		GUI_SetBkColor(GUI_BLACK);
 		GUI_Clear();  //全屏黑色
-		GUI_DrawGradientRoundedV(0, 0, 399, 50, 0, 0xC0CEDC, GUI_BLACK); //渐变
-		//
-//		GUI_DrawGradientRoundedV(0, 0, 399, 239, 0, 0xC0CEDC, GUI_BLACK);
+//		GUI_DrawGradientRoundedV(0, 0, 399, 50, 0, 0xC0CEDC, GUI_BLACK); //渐变
+//		//
+////		GUI_DrawGradientRoundedV(0, 0, 399, 239, 0, 0xC0CEDC, GUI_BLACK);
 		GUI_SetPenSize(3);
 		GUI_SetColor(GUI_RED);
 		GUI_DrawLine(0, 50, 400, 50); //画红线
@@ -267,22 +307,46 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 /***************************************************************************************/
 	//以下为自定义信息
 	
+	//旋钮左转
 	case MSG_KNOB_CONTROL_LEFT:
 		GUI_SendKeyMsg(GUI_KEY_TAB, 1);     //下一个聚焦点
 		break;
 	
+	//旋钮右转
 	case MSG_KNOB_CONTROL_RIGHT:
 		GUI_SendKeyMsg(GUI_KEY_BACKTAB, 1); //上一个聚焦
 		break;
 	
+	//CONTROL按下
 	case MSG_KEY_CONTROL:
 		GUI_SendKeyMsg(GUI_KEY_ENTER, 1);   //确定
 		break;
 	
+	//ESC
 	case MSG_KEY_ESC:
 		GUI_SendKeyMsg(GUI_KEY_ESCAPE, 1);  //退出
 		break;
 	
+	//INPUT
+	case MSG_KEY_INPUT:
+		INPUT_channel = 0;  //输入通道聚焦位置标志
+        GUI_EndDialog(pMsg->hWin, 0); //结束本界面
+        hWin_now = CreateINPUT_CHANNEL(); //显示INPUT子界面
+		break;
+	
+	//OUT
+	case MSG_KEY_OUTPUT:
+		OUTPUT_channel = 0;
+        GUI_EndDialog(pMsg->hWin,0);     //结束当前页面
+        hWin_now = CreateOut_face();     //输出OUT子界面
+		break;
+	
+	
+	//SYS
+	case MSG_KEY_SYSTEM:
+		GUI_EndDialog(pMsg->hWin,0);
+		hWin_now = CreateSystem();
+		break;
 	
 	default:
 		WM_DefaultProc(pMsg);

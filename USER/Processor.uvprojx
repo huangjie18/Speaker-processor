@@ -585,9 +585,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>STemWin_Demo</GroupName>
-        </Group>
-        <Group>
           <GroupName>malloc</GroupName>
           <Files>
             <File>
@@ -649,6 +646,133 @@
         </Group>
         <Group>
           <GroupName>Interface_Out</GroupName>
+          <Files>
+            <File>
+              <FileName>Out_face.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\Out_face.c</FilePath>
+            </File>
+            <File>
+              <FileName>Output1_third_face.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\Output1_third_face.c</FilePath>
+            </File>
+            <File>
+              <FileName>Out_FirstDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\Window_Child\Out_FirstDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Out_twofaceDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\Window_Child\Out_twofaceDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Out_threefaceDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Out\Window_Child\Out_threefaceDLG.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Interface_Coax</GroupName>
+          <Files>
+            <File>
+              <FileName>Coax_face.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFacd-Coax\Coax_face.c</FilePath>
+            </File>
+            <File>
+              <FileName>COAX_face_3DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFacd-Coax\COAX_face_3DLG.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Interface_Gen</GroupName>
+          <Files>
+            <File>
+              <FileName>Gen_OutDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Gen_OutDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gen_WNoiseDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Gen_WNoiseDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Sweep_TwoDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Child\Sweep_TwoDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gen_SinDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Gen_SinDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>SIN_Child1DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Child\SIN_Child1DLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gen_SweepDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Gen_SweepDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Sweep_child_1DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Sweep_child_1DLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gen_PulseDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Gen_PulseDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Pulse_ChildDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Pulse_ChildDLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>WNoise_Child1DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\WNoise_Child1DLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Gen_WNoise2DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\Gen_WNoise2DLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>WNoise_Child2DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Interface_Gen\WNoise_Child2DLG.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Interface_Sys</GroupName>
+          <Files>
+            <File>
+              <FileName>SystemDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Sys\SystemDLG.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Interface_Mode</GroupName>
+          <Files>
+            <File>
+              <FileName>ModeDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\InterFace_Mode\ModeDLG.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

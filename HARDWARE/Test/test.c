@@ -78,7 +78,7 @@ Requirements: WindowManager - ( )
 static void FLEX_SET(void)
 {
 	//设置皮肤
-	Button_flex();
+	Button_flex();   //按钮皮肤设置
 //	Framewin_flex(); //用了自定义
 }
 
@@ -97,10 +97,23 @@ void MainTask(void)
 	u8 key_value;
     WM_SetCreateFlags(WM_CF_MEMDEV);  //开启存储设备，要消耗内存
     GUI_Init();
+	WM_SetDesktopColor(GUI_BLACK); //背景色
 	FLEX_SET(); //皮肤设置
 //  Pratice();  //练习用
 //  example();  //例子用
 	hWin_now = CreateMainface(); //创建主界面
+	
+	
+	
+	
+	//测试
+//	hWin_now = CreateOutput1_third_face();
+//	WM_SendMessageNoPara(hWin_now, MSG_KEY_CONTROL); //确定
+//	while(1)
+//	{
+
+//		GUI_Delay(10);
+//	}
 
 }
 
