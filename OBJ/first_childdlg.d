@@ -2,7 +2,7 @@
 ..\obj\first_childdlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\WM.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\first_childdlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\first_childdlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\LCD.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\first_childdlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\first_childdlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\first_childdlg.o: ..\STemWin\inc\KNOB.h
-..\obj\first_childdlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\first_childdlg.o: ..\HARDWARE\InterFace\interface.h

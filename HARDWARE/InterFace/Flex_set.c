@@ -35,3 +35,69 @@ void Framewin_flex(void)
 	FRAMEWIN_SetSkinFlexProps(&Props,FRAMEWIN_SKINFLEX_PI_ACTIVE);//设置活动状态的皮肤
 }
 
+//SLIDER皮肤设置
+int _DrawSkin_SLIDER1(const WIDGET_ITEM_DRAW_INFO * pDrawItemInfo)
+{
+    static GUI_RECT rSlot; //轴的坐标
+    static GUI_RECT rSlider = {0, 0, 0, 0};
+	static char a=0;
+    int x, y;
+	SLIDER_SetWidth(pDrawItemInfo->hWin, 22);
+    switch (pDrawItemInfo->Cmd)
+    {
+    case WIDGET_ITEM_DRAW_TICKS: //如果下面不操作则不绘制刻度线
+        //以下添加刻度线
+        break;
+    case WIDGET_ITEM_DRAW_SHAFT: //绘制轴
+        rSlot.x0 = pDrawItemInfo->x0;
+        rSlot.y0 = pDrawItemInfo->y0;
+        rSlot.x1 = pDrawItemInfo->x1;
+        rSlot.y1 = pDrawItemInfo->y1;
+	
+        GUI_DrawGradientRoundedV(rSlot.x0, rSlot.y0 + 12, rSlot.x1, rSlot.y1 - 12, 3, 0x0000FF, 0x00FFFF);
+
+//		GUI_DrawGradientRoundedV(rSlider.x1 - 8, rSlot.y0 + 12, rSlot.x1, rSlot.y1 - 12, 3, 0x00, GUI_GRAY);
+//        if(rSlider.y0!=0)
+//        {
+//            GUI_SetColor(GUI_RED);
+//            x = rSlider.x1;
+////            GUI_FillCircle(x,(rSlot.y0+rSlot.y1)/2,15); //绘制圆点
+//            GUI_FillRect(rSlider.x0,rSlot.y0,rSlider.x1,rSlot.y1);
+//        }
+        break;
+
+    case WIDGET_ITEM_DRAW_THUMB: //滑块绘制
+        rSlider.x0 = pDrawItemInfo->x0;
+        rSlider.y0 = pDrawItemInfo->y0;
+        rSlider.x1 = pDrawItemInfo->x1;
+        rSlider.y1 = pDrawItemInfo->y1;
+		
+
+//        GUI_SetColor(GUI_RED);
+//        GUI_DrawCircle((rSlider.x0+rSlider.x1)/2,(rSlider.y0+rSlider.y1)/2,10);
+//        GUI_SetColor(GUI_WHITE);
+//        GUI_FillCircle((rSlider.x0+rSlider.x1)/2,(rSlider.y0+rSlider.y1)/2,6);
+//        GUI_SetAlpha(0x70);  //混合透明色,需要比较多的动态内存，如果内存不足则不会有现象
+//        GUI_SetColor(GUI_YELLOW);
+//        GUI_FillCircle((rSlider.x0 + rSlider.x1) / 2, (rSlider.y0 + rSlider.y1) / 2, 10);
+//        GUI_SetAlpha(0);
+        GUI_SetColor(GUI_BLACK);
+        GUI_FillCircle((rSlider.x0 + rSlider.x1) / 2, (rSlider.y0 + rSlider.y1) / 2, 10);
+        GUI_SetColor(GUI_BLUE);
+        GUI_FillCircle((rSlider.x0 + rSlider.x1) / 2, (rSlider.y0 + rSlider.y1) / 2, 6);
+	
+        break;
+
+    default:
+        return SLIDER_DrawSkinFlex(pDrawItemInfo);
+    }
+	
+    return 0;
+}
+
+//修改list框
+void Listbox_flex(void)
+{
+	LISTBOX_SetDefaultBkColor(LISTBOX_CI_UNSEL,GUI_LIGHTBLUE); //未选项背景
+//	LISTBOX_SetDefaultTextColor(LISTBOX_CI_UNSEL,GUI_WHITE);
+}

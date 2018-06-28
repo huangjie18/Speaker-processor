@@ -70,6 +70,21 @@ typedef struct
 #define Cyan           0x7FFF
 #define Yellow         0xFFE0
 
+#define WHITE         	 0xFFFF
+#define BLACK         	 0x0000	  
+#define BLUE         	 0x001F  
+#define BRED             0XF81F
+#define GRED 			 0XFFE0
+#define GBLUE			 0X07FF
+#define RED           	 0xF800
+#define MAGENTA       	 0xF81F
+#define GREEN         	 0x07E0
+#define CYAN          	 0x7FFF
+#define YELLOW        	 0xFFE0
+#define BROWN 			 0XBC40 //棕色
+#define BRRED 			 0XFC07 //棕红色
+#define GRAY  			 0X8430 //灰色
+
 void Lcd_Initialize(void);
 void Lcd_Clear(u16 Color);
 void BlockWrite(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsigned int Yend);
@@ -80,4 +95,6 @@ void WriteComm(u16 CMD);
 void WriteData(u16 tem_data);
 void Lcd_ColorBox(u16 xStart,u16 yStart,u16 xLong,u16 yLong,u16 Color);
 u16 LCD_RD_DATA(void);
+
+u16 LCD_Color_trans(u16 Color); //掉转颜色位
 #endif

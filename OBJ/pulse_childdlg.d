@@ -2,7 +2,7 @@
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\WM.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\pulse_childdlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\pulse_childdlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\LCD.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\pulse_childdlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\pulse_childdlg.o: ..\STemWin\inc\KNOB.h
-..\obj\pulse_childdlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\pulse_childdlg.o: ..\HARDWARE\InterFace\interface.h

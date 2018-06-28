@@ -2,7 +2,7 @@
 ..\obj\output1_third_face.o: ..\STemWin\inc\DIALOG.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\WM.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\output1_third_face.o: ..\STemWin\Config\GUIConf.h
+..\obj\output1_third_face.o: ..\STemWin\inc\GUIConf.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\LCD.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\output1_third_face.o: ..\STemWin\inc\RADIO.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\SLIDER.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\SPINBOX.h
+..\obj\output1_third_face.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\TEXT.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\output1_third_face.o: ..\STemWin\inc\KNOB.h
-..\obj\output1_third_face.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\output1_third_face.o: ..\HARDWARE\InterFace\interface.h

@@ -369,7 +369,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\USER;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LCD;..\STemWin\Config;..\STemWin\inc;..\MALLOC;..\HARDWARE\TIMER;..\STemWin\Demo;..\HARDWARE\Test;..\HARDWARE\InterFace;..\HARDWARE\LED;..\HARDWARE\KEY</IncludePath>
+              <IncludePath>..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\USER;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LCD;..\STemWin\Config;..\STemWin\inc;..\MALLOC;..\HARDWARE\TIMER;..\STemWin\Demo;..\HARDWARE\Test;..\HARDWARE\InterFace;..\HARDWARE\LED;..\HARDWARE\KEY;..\STemWin\STemWin_Addons</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -578,9 +578,9 @@
           <GroupName>STemWin_LIB</GroupName>
           <Files>
             <File>
-              <FileName>STemWin532_CM3_Keil.lib</FileName>
+              <FileName>GUI_CM3_L.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>..\STemWin\Lib\STemWin532_CM3_Keil.lib</FilePath>
+              <FilePath>..\STemWin\Lib\GUI_CM3_L.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -771,6 +771,16 @@
               <FileName>ModeDLG.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\InterFace_Mode\ModeDLG.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>example</GroupName>
+          <Files>
+            <File>
+              <FileName>MOTION_RadialMenu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\example\MOTION_RadialMenu.c</FilePath>
             </File>
           </Files>
         </Group>

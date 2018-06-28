@@ -2,7 +2,7 @@
 ..\obj\input_face.o: ..\STemWin\inc\DIALOG.h
 ..\obj\input_face.o: ..\STemWin\inc\WM.h
 ..\obj\input_face.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\input_face.o: ..\STemWin\Config\GUIConf.h
+..\obj\input_face.o: ..\STemWin\inc\GUIConf.h
 ..\obj\input_face.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\input_face.o: ..\STemWin\inc\LCD.h
 ..\obj\input_face.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\input_face.o: ..\STemWin\inc\RADIO.h
 ..\obj\input_face.o: ..\STemWin\inc\SLIDER.h
 ..\obj\input_face.o: ..\STemWin\inc\SPINBOX.h
+..\obj\input_face.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\input_face.o: ..\STemWin\inc\TEXT.h
 ..\obj\input_face.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\input_face.o: ..\STemWin\inc\KNOB.h
-..\obj\input_face.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\input_face.o: ..\HARDWARE\InterFace\interface.h

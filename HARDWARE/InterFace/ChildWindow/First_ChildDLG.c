@@ -99,7 +99,7 @@ WM_HWIN Get_child_hWin(I32 ID)
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] =
 {
     { WINDOW_CreateIndirect, "Window_Child", ID_WINDOW_0, 0, 0, 285, 240, 0, 0x0, 0 },
-    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_0, 23, 54, 241, 52, 0, 0x0, 0 },
+    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_0, 23, 54, 241, 34, 0, 0x0, 0 },
     { TEXT_CreateIndirect, "Text", ID_TEXT_0, 14, 11, 59, 31, 0, 0x64, 0 },
 //  { TEXT_CreateIndirect, "Text", ID_TEXT_1, 75, 11, 67, 31, 0, 0x64, 0 },
     { CHECKBOX_CreateIndirect, "Checkbox", ID_CHECKBOX_0, 23, 124, 95, 27, 0, 0x0, 0 },
@@ -131,42 +131,71 @@ static void _ShowSlidervalue(void)
 //不能小范围改成大范围
 static int _DrawSkin_SLIDER(const WIDGET_ITEM_DRAW_INFO * pDrawItemInfo)
 {
-    GUI_RECT rSlot; //轴的坐标
-    GUI_RECT rSlider;
+       static GUI_RECT rSlot; //轴的坐标
+    static GUI_RECT rSlider = {0, 0, 0, 0};
+    int x, y;
 
-    if(pDrawItemInfo->Cmd == WIDGET_ITEM_DRAW_SHAFT) //确定此时获得的坐标为轴坐标
+    switch (pDrawItemInfo->Cmd)
     {
-        rSlot.x0 = pDrawItemInfo->x0; //获得轴的x0坐标
-        rSlot.x1 = pDrawItemInfo->x1;
+    case WIDGET_ITEM_DRAW_TICKS: //如果下面不操作则不绘制刻度线
+        //以下添加刻度线
+        break;
+    case WIDGET_ITEM_DRAW_SHAFT: //绘制轴
+        rSlot.x0 = pDrawItemInfo->x0;
         rSlot.y0 = pDrawItemInfo->y0;
+        rSlot.x1 = pDrawItemInfo->x1;
         rSlot.y1 = pDrawItemInfo->y1;
-        rSlot.y0 = (rSlot.y0 + rSlot.y1) / 2; //设置轴为y0和y1中点
-        rSlot.y1 = rSlot.y0 + 20;
+
+
+
+
+//        GUI_SetPenSize(5);
+//        GUI_SetColor(GUI_GREEN);
+//        GUI_DrawLine(rSlot.x0, (rSlot.y0+rSlot.y1)/2, rSlider.x0, (rSlot.y0+rSlot.y1)/2); //画绿线
+//        GUI_SetColor(GUI_GRAY);
+//        GUI_DrawLine(rSlider.x1, (rSlot.y0+rSlot.y1)/2, rSlot.x1, (rSlot.y0+rSlot.y1)/2); //画灰线
+        GUI_DrawGradientRoundedV(rSlot.x0, rSlot.y0 + 12, rSlider.x0 + 8, rSlot.y1 - 12, 3, 0x0000FF, 0x00FFFF);
+        GUI_DrawGradientRoundedV(rSlider.x1 - 8, rSlot.y0 + 12, rSlot.x1, rSlot.y1 - 12, 3, 0x00, GUI_GRAY);
+//        if(rSlider.y0!=0)
+//        {
+//            GUI_SetColor(GUI_RED);
+//            x = rSlider.x1;
+////            GUI_FillCircle(x,(rSlot.y0+rSlot.y1)/2,15); //绘制圆点
+//            GUI_FillRect(rSlider.x0,rSlot.y0,rSlider.x1,rSlot.y1);
+//        }
+
+        break;
+
+    case WIDGET_ITEM_DRAW_THUMB: //滑块绘制
+        rSlider.x0 = pDrawItemInfo->x0;
+        rSlider.y0 = pDrawItemInfo->y0;
+        rSlider.x1 = pDrawItemInfo->x1;
+        rSlider.y1 = pDrawItemInfo->y1;
+	
+
+//        GUI_SetColor(GUI_RED);
+//        GUI_DrawCircle((rSlider.x0+rSlider.x1)/2,(rSlider.y0+rSlider.y1)/2,10);
+//        GUI_SetColor(GUI_WHITE);
+//        GUI_FillCircle((rSlider.x0+rSlider.x1)/2,(rSlider.y0+rSlider.y1)/2,6);
+//        GUI_SetAlpha(0x70);  //混合透明色,需要比较多的动态内存，如果内存不足则不会有现象
+//        GUI_SetColor(GUI_YELLOW);
+//        GUI_FillCircle((rSlider.x0 + rSlider.x1) / 2, (rSlider.y0 + rSlider.y1) / 2, 10);
+//        GUI_SetAlpha(0);
+        GUI_SetColor(GUI_YELLOW);
+        GUI_FillCircle((rSlider.x0 + rSlider.x1) / 2, (rSlider.y0 + rSlider.y1) / 2, 10);
+//        GUI_SetColor(GUI_WHITE);
+//        GUI_FillCircle((rSlider.x0 + rSlider.x1) / 2, (rSlider.y0 + rSlider.y1) / 2, 6);
+	
+		
+        break;
+
+
+    case WIDGET_ITEM_DRAW_FOCUS: //聚焦框
+        break;
+    default:
+        return SLIDER_DrawSkinFlex(pDrawItemInfo);
     }
-
-
-    switch(pDrawItemInfo->Cmd)
-    {
-        case WIDGET_ITEM_DRAW_TICKS: //如果下面不操作则不绘制刻度线
-            //以下添加刻度线
-
-            break;
-
-        case WIDGET_ITEM_DRAW_THUMB: //滑块绘制
-//        WM_GetClientRectEx(pDrawItemInfo->hWin, &rSlider);
-//        GUI_FillRoundedRect(rSlider.x0, rSlider.y0, rSlider.x1, rSlider.y1, 10);
-            return SLIDER_DrawSkinFlex(pDrawItemInfo);
-            break;
-
-//    case WIDGET_ITEM_DRAW_SHAFT: //绘制轴
-//        GUI_SetBkColor(GUI_RED);
-//        GUI_ClearRect(rSlot.x0,rSlot.y0,rSlot.x1,rSlot.y1);
-//        break;
-
-        default:
-            return SLIDER_DrawSkinFlex(pDrawItemInfo);
-    }
-    return 0; //错误就返回0
+    return 0;
 }
 
 
@@ -192,7 +221,7 @@ static void _cbDialog(WM_MESSAGE * pMsg)
             SLIDER_SetValue(hItem, Input1_data1[INPUT_channel].Gain); //设置滑块的值
 
             //以下尝试自定义皮肤设置
-            SLIDER_SetSkin(hItem, _DrawSkin_SLIDER); //绘制回调函数_DrawSkin_SLIDER
+//            SLIDER_SetSkin(hItem, _DrawSkin_SLIDER); //绘制回调函数_DrawSkin_SLIDER
 
             //
             // Initialization of 'Text'

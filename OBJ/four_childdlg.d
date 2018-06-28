@@ -2,7 +2,7 @@
 ..\obj\four_childdlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\WM.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\four_childdlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\four_childdlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\LCD.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\four_childdlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\four_childdlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\four_childdlg.o: ..\STemWin\inc\KNOB.h
-..\obj\four_childdlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\four_childdlg.o: ..\HARDWARE\InterFace\interface.h

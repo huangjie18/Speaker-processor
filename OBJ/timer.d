@@ -32,7 +32,7 @@
 ..\obj\timer.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 ..\obj\timer.o: ..\STemWin\inc\GUI.h
 ..\obj\timer.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\timer.o: ..\STemWin\Config\GUIConf.h
+..\obj\timer.o: ..\STemWin\inc\GUIConf.h
 ..\obj\timer.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\timer.o: ..\STemWin\inc\LCD.h
 ..\obj\timer.o: ..\STemWin\inc\Global.h

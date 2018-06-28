@@ -14,11 +14,12 @@ static void LCD_GPIO_Config(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
     /* config lcd gpio clock base on FSMC */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD 
 	| RCC_APB2Periph_GPIOE , ENABLE);
 	
-	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
+	
     
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
@@ -28,7 +29,7 @@ static void LCD_GPIO_Config(void)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;		
     GPIO_Init(GPIOD, &GPIO_InitStructure);
 	
-	//模板要
+	//模板要,背光灯
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 ; 	 
     GPIO_Init(GPIOA, &GPIO_InitStructure);  		   
     GPIO_SetBits(GPIOA,GPIO_Pin_1);
@@ -36,9 +37,9 @@ static void LCD_GPIO_Config(void)
 	
     
 	//LCD复位引脚
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12; 	 
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 ; 	 
     GPIO_Init(GPIOD, &GPIO_InitStructure); 	   
-    
+
     /* config tft data lines base on FSMC
 	 * data lines,FSMC-D0~D15: PD 14 15 0 1,PE 7 8 9 10 11 12 13 14 15,PD 8 9 10
 	 */	
@@ -49,7 +50,7 @@ static void LCD_GPIO_Config(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	#endif
     
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_8 | GPIO_Pin_9 | 
+    GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_8 | GPIO_Pin_9 | 
                                   GPIO_Pin_10 | GPIO_Pin_14 | GPIO_Pin_15;
     GPIO_Init(GPIOD, &GPIO_InitStructure);
     
@@ -106,7 +107,7 @@ static void LCD_FSMC_Config(void)
     /* Enable the FSMC Clock */
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
     
-    p.FSMC_AddressSetupTime = 0x02;	 //地址建立时间
+    p.FSMC_AddressSetupTime = 0x05;	 //地址建立时间,小于5时颜色不对
     p.FSMC_AddressHoldTime = 0x00;	 //地址保持时间
     p.FSMC_DataSetupTime = 0x05;		 //数据建立时间
     p.FSMC_BusTurnAroundDuration = 0x00;
@@ -115,20 +116,36 @@ static void LCD_FSMC_Config(void)
 
     p.FSMC_AccessMode = FSMC_AccessMode_B;	 // 一般使用模式B来控制LCD
     
-    FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;      //这里我们使用NE1
-    FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable; // 不复用数据地址
-    FSMC_NORSRAMInitStructure.FSMC_MemoryType = FSMC_MemoryType_NOR;    //NOR
-    FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b; //存储器数据宽度为16bit
-    FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode = FSMC_BurstAccessMode_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
-    FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;
-    FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;  //  存储器写使能
-    FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Disable; // 读写使用同样的时序
-    FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &p;  //读时序
-    FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &p;      //写时序
+//    FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;      //这里我们使用NE1
+//    FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable; // 不复用数据地址
+//    FSMC_NORSRAMInitStructure.FSMC_MemoryType = FSMC_MemoryType_NOR;    //NOR
+//    FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b; //存储器数据宽度为16bit
+//    FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode = FSMC_BurstAccessMode_Disable;
+//    FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
+//    FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;
+//    FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;
+//    FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;  //  存储器写使能
+//    FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;
+//    FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Disable; // 读写使用同样的时序
+//    FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
+//    FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &p;  //读时序
+//    FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &p;      //写时序
+
+	FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;//  这里我们使用NE4 ，也就对应BTCR[6],[7]。
+	FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable; // 不复用数据地址
+	FSMC_NORSRAMInitStructure.FSMC_MemoryType =FSMC_MemoryType_NOR;// FSMC_MemoryType_SRAM;  //SRAM   
+	FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b;//存储器数据宽度为16bit   
+	FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode =FSMC_BurstAccessMode_Disable;// FSMC_BurstAccessMode_Disable; 
+	FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
+		FSMC_NORSRAMInitStructure.FSMC_AsynchronousWait=FSMC_AsynchronousWait_Disable; 
+	FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;   
+	FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;  
+	FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;	//  存储器写使能
+	FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;   
+	FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Enable; // 读写使用不同的时序
+	FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable; 
+	FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &p; //读写时序
+	FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &p;  //写时序
     
     FSMC_NORSRAMInit(&FSMC_NORSRAMInitStructure);   //初始化FSMC配置
     
@@ -179,12 +196,16 @@ static void LCD_FSMC_Config(void)
 }
 
 void WriteComm(u16 CMD)
-{			
-	*(__IO u16 *) (Bank1_LCD_C) = CMD;
+{	
+	u16 Color;
+	Color = LCD_Color_trans(CMD);
+	*(__IO u16 *) (Bank1_LCD_C) = Color;
 }
  void WriteData(u16 tem_data)
-{			
-	*(__IO u16 *) (Bank1_LCD_D) = tem_data;
+{		
+	u16 Color;
+	Color = LCD_Color_trans(tem_data);
+	*(__IO u16 *) (Bank1_LCD_D) = Color;
 }
 
 #else
@@ -470,8 +491,13 @@ void Lcd_Initialize(void)
 ******************************************/
 void LCD_WR_REG_RAM(u16 Index,u16 CongfigTemp)
 {
-	*(__IO u16 *) (Bank1_LCD_C) = Index;	
-	*(__IO u16 *) (Bank1_LCD_D) = CongfigTemp;
+	u16 Color;
+	Color = LCD_Color_trans(Index);
+	*(__IO u16 *) (Bank1_LCD_C) = Color;
+	
+	
+	Color = LCD_Color_trans(CongfigTemp);
+	*(__IO u16 *) (Bank1_LCD_D) = Color;
 }
 
 /**********************************************
@@ -524,6 +550,7 @@ void DrawPixel(u16 x,u16 y, int Color)
 {
 	BlockWrite(x,x,y,y);
 	#if FSMC_Enable  //使用FSMC
+	Color = LCD_Color_trans(Color);
 	*(__IO u16 *) (Bank1_LCD_D) = Color;
 	#else
 	WriteData(Color);
@@ -653,7 +680,9 @@ u16 GetPoint(u16 x, u16 y)
 	#if FSMC_Enable
 	r = *(__IO u16 *) (Bank1_LCD_D);
 	r = *(__IO u16 *) (Bank1_LCD_D);
+	r = LCD_Color_trans(r);
 	b = *(__IO u16 *) (Bank1_LCD_D);
+	b = LCD_Color_trans(b);
 	#else
 	r = LCD_Read();
 	r = LCD_Read();
@@ -680,11 +709,38 @@ u16 GetPoint(u16 x, u16 y)
 *************************************************/
 void Lcd_ColorBox(u16 xStart,u16 yStart,u16 xLong,u16 yLong,u16 Color)
 {
+	u8 i,j;
+	u16 LCD_DATA;
 	u32 temp;
 
 	BlockWrite(xStart,xStart+xLong-1,yStart,yStart+yLong-1);
 	for (temp=0; temp<xLong*yLong; temp++)
 	{
-		*(__IO u16 *) (Bank1_LCD_D) = Color;
+		#if FSMC_Enable
+		i = (Color>>13)&0x01;
+		j = (Color>>15)&0x01;
+		LCD_DATA = Color;
+		LCD_DATA = LCD_DATA&0x5fff;
+		LCD_DATA = LCD_DATA|(j<<13);
+		LCD_DATA = LCD_DATA|(i<<15);
+		*(__IO u16 *) (Bank1_LCD_D) = LCD_DATA;
+
+		#else
+		WriteData(Color);
+		#endif
 	}
+}
+
+//DB13和DB15掉转
+u16 LCD_Color_trans(u16 Color)
+{
+	u8 i,j;
+	u16 LCD_DATA;
+	i = (Color>>13)&0x01;
+	j = (Color>>15)&0x01;
+	LCD_DATA = Color;
+	LCD_DATA = LCD_DATA&0x5fff;
+	LCD_DATA = LCD_DATA|(j<<13);
+	LCD_DATA = LCD_DATA|(i<<15);
+	return LCD_DATA;
 }

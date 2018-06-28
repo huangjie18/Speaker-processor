@@ -2,7 +2,7 @@
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\WM.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\wnoise_child1dlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\wnoise_child1dlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\LCD.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\wnoise_child1dlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\wnoise_child1dlg.o: ..\STemWin\inc\KNOB.h
-..\obj\wnoise_child1dlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\wnoise_child1dlg.o: ..\HARDWARE\InterFace\interface.h

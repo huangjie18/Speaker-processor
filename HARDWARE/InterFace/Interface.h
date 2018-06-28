@@ -35,7 +35,8 @@ extern WM_HWIN hWin_now;
 //皮肤设置函数
 void Button_flex(void); //按钮皮肤设置
 void Framewin_flex(void); //框架皮肤设置
-
+int _DrawSkin_SLIDER1(const WIDGET_ITEM_DRAW_INFO * pDrawItemInfo);//滑块皮肤设置
+void Listbox_flex(void);
 //界面函数
 WM_HWIN CreateMainface(void); //主界面窗口
 

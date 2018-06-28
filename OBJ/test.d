@@ -33,11 +33,12 @@
 ..\obj\test.o: ..\HARDWARE\Test\example.h
 ..\obj\test.o: ..\STemWin\inc\GUI.h
 ..\obj\test.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\test.o: ..\STemWin\Config\GUIConf.h
+..\obj\test.o: ..\STemWin\inc\GUIConf.h
 ..\obj\test.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\test.o: ..\STemWin\inc\LCD.h
 ..\obj\test.o: ..\STemWin\inc\Global.h
 ..\obj\test.o: ..\STemWin\inc\GUI_Version.h
+..\obj\test.o: ..\HARDWARE\InterFace\interface.h
 ..\obj\test.o: ..\STemWin\inc\DIALOG.h
 ..\obj\test.o: ..\STemWin\inc\WM.h
 ..\obj\test.o: ..\STemWin\inc\WM_GUI.h
@@ -73,10 +74,11 @@
 ..\obj\test.o: ..\STemWin\inc\RADIO.h
 ..\obj\test.o: ..\STemWin\inc\SLIDER.h
 ..\obj\test.o: ..\STemWin\inc\SPINBOX.h
+..\obj\test.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\test.o: ..\STemWin\inc\TEXT.h
 ..\obj\test.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\test.o: ..\STemWin\inc\KNOB.h
-..\obj\test.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\test.o: ..\HARDWARE\InterFace\interface.h
 ..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\test.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

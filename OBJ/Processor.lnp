@@ -26,7 +26,7 @@
 "..\obj\lcdconf_flexcolor_template.o"
 "..\obj\gui_x.o"
 "..\obj\gui_x_touch_analog.o"
-"..\STemWin\Lib\STemWin532_CM3_Keil.lib"
+"..\STemWin\Lib\GUI_CM3_L.lib"
 "..\obj\malloc.o"
 "..\obj\main_face.o"
 "..\obj\flex_set.o"
@@ -58,6 +58,7 @@
 "..\obj\wnoise_child2dlg.o"
 "..\obj\systemdlg.o"
 "..\obj\modedlg.o"
+"..\obj\motion_radialmenu.o"
 --strict --scatter "..\OBJ\Processor.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

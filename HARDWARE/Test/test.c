@@ -80,6 +80,8 @@ static void FLEX_SET(void)
 	//设置皮肤
 	Button_flex();   //按钮皮肤设置
 //	Framewin_flex(); //用了自定义
+	SLIDER_SetDefaultSkin(_DrawSkin_SLIDER1);//滑块皮肤设置
+	Listbox_flex(); //列表框皮肤设置
 }
 
 /*********************************************************************
@@ -99,19 +101,15 @@ void MainTask(void)
     GUI_Init();
 	WM_SetDesktopColor(GUI_BLACK); //背景色
 	FLEX_SET(); //皮肤设置
-//  Pratice();  //练习用
-//  example();  //例子用
 	hWin_now = CreateMainface(); //创建主界面
+//  Pratice();  //练习用
+	
+//    example();  //例子用
 	
 	
-	
-	
-	//测试
-//	hWin_now = CreateOutput1_third_face();
-//	WM_SendMessageNoPara(hWin_now, MSG_KEY_CONTROL); //确定
+
 //	while(1)
 //	{
-
 //		GUI_Delay(10);
 //	}
 

@@ -2,7 +2,7 @@
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\WM.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\sin_child1dlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\sin_child1dlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\LCD.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\sin_child1dlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\sin_child1dlg.o: ..\STemWin\inc\KNOB.h
-..\obj\sin_child1dlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\sin_child1dlg.o: ..\HARDWARE\InterFace\interface.h

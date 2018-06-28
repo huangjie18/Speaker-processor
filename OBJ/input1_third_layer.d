@@ -2,7 +2,7 @@
 ..\obj\input1_third_layer.o: ..\STemWin\inc\DIALOG.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\WM.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\input1_third_layer.o: ..\STemWin\Config\GUIConf.h
+..\obj\input1_third_layer.o: ..\STemWin\inc\GUIConf.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\LCD.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\input1_third_layer.o: ..\STemWin\inc\RADIO.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\SLIDER.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\SPINBOX.h
+..\obj\input1_third_layer.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\TEXT.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\input1_third_layer.o: ..\STemWin\inc\KNOB.h
-..\obj\input1_third_layer.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\input1_third_layer.o: ..\HARDWARE\InterFace\interface.h

@@ -58,9 +58,9 @@
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] =
 {
     { WINDOW_CreateIndirect, "Third_Child", ID_WINDOW_0, 0, 0, 285, 240, 0, 0x0, 0 },
-    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_0, 27, 28, 224, 43, 0, 0x0, 0 },
-    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_1, 27, 107, 224, 43, 0, 0x0, 0 },
-    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_2, 27, 181, 224, 43, 0, 0x0, 0 },
+    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_0, 27, 28, 224, 34, 0, 0x0, 0 },
+    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_1, 27, 107, 224, 34, 0, 0x0, 0 },
+    { SLIDER_CreateIndirect, "Slider", ID_SLIDER_2, 27, 181, 224, 34, 0, 0x0, 0 },
     { TEXT_CreateIndirect, "Text", ID_TEXT_0, 27, 7, 109, 20, 0, 0x64, 0 },
     { TEXT_CreateIndirect, "Text", ID_TEXT_1, 27, 79, 109, 20, 0, 0x64, 0 },
     { TEXT_CreateIndirect, "Text", ID_TEXT_2, 27, 155, 109, 20, 0, 0x64, 0 },

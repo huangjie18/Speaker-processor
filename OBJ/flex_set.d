@@ -2,7 +2,7 @@
 ..\obj\flex_set.o: ..\STemWin\inc\DIALOG.h
 ..\obj\flex_set.o: ..\STemWin\inc\WM.h
 ..\obj\flex_set.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\flex_set.o: ..\STemWin\Config\GUIConf.h
+..\obj\flex_set.o: ..\STemWin\inc\GUIConf.h
 ..\obj\flex_set.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\flex_set.o: ..\STemWin\inc\LCD.h
 ..\obj\flex_set.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\flex_set.o: ..\STemWin\inc\RADIO.h
 ..\obj\flex_set.o: ..\STemWin\inc\SLIDER.h
 ..\obj\flex_set.o: ..\STemWin\inc\SPINBOX.h
+..\obj\flex_set.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\flex_set.o: ..\STemWin\inc\TEXT.h
 ..\obj\flex_set.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\flex_set.o: ..\STemWin\inc\KNOB.h
-..\obj\flex_set.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\flex_set.o: ..\HARDWARE\InterFace\interface.h

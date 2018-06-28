@@ -34,7 +34,7 @@
 ..\obj\main.o: ..\MALLOC\malloc.h
 ..\obj\main.o: ..\STemWin\inc\GUI.h
 ..\obj\main.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\main.o: ..\STemWin\Config\GUIConf.h
+..\obj\main.o: ..\STemWin\inc\GUIConf.h
 ..\obj\main.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\main.o: ..\STemWin\inc\LCD.h
 ..\obj\main.o: ..\STemWin\inc\Global.h
@@ -82,5 +82,7 @@
 ..\obj\main.o: ..\STemWin\inc\DIALOG.h
 ..\obj\main.o: ..\STemWin\inc\RADIO.h
 ..\obj\main.o: ..\STemWin\inc\SPINBOX.h
+..\obj\main.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\main.o: ..\STemWin\inc\KNOB.h
-..\obj\main.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\main.o: ..\HARDWARE\InterFace\interface.h
+..\obj\main.o: ..\HARDWARE\Test\example.h

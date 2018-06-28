@@ -2,7 +2,7 @@
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\WM.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\sweep_twodlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\sweep_twodlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\LCD.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\sweep_twodlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\sweep_twodlg.o: ..\STemWin\inc\KNOB.h
-..\obj\sweep_twodlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\sweep_twodlg.o: ..\HARDWARE\InterFace\interface.h

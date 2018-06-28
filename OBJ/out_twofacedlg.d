@@ -2,7 +2,7 @@
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\WM.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\out_twofacedlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\out_twofacedlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\LCD.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\out_twofacedlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\out_twofacedlg.o: ..\STemWin\inc\KNOB.h
-..\obj\out_twofacedlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\out_twofacedlg.o: ..\HARDWARE\InterFace\interface.h

@@ -2,7 +2,7 @@
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\WM.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\out_threefacedlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\out_threefacedlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\LCD.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\out_threefacedlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\out_threefacedlg.o: ..\STemWin\inc\KNOB.h
-..\obj\out_threefacedlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\out_threefacedlg.o: ..\HARDWARE\InterFace\interface.h

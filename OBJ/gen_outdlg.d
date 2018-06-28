@@ -2,7 +2,7 @@
 ..\obj\gen_outdlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\WM.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\gen_outdlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\gen_outdlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\LCD.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\gen_outdlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\gen_outdlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\gen_outdlg.o: ..\STemWin\inc\KNOB.h
-..\obj\gen_outdlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\gen_outdlg.o: ..\HARDWARE\InterFace\interface.h

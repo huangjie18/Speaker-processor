@@ -2,7 +2,7 @@
 ..\obj\modedlg.o: ..\STemWin\inc\DIALOG.h
 ..\obj\modedlg.o: ..\STemWin\inc\WM.h
 ..\obj\modedlg.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\modedlg.o: ..\STemWin\Config\GUIConf.h
+..\obj\modedlg.o: ..\STemWin\inc\GUIConf.h
 ..\obj\modedlg.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\modedlg.o: ..\STemWin\inc\LCD.h
 ..\obj\modedlg.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\modedlg.o: ..\STemWin\inc\RADIO.h
 ..\obj\modedlg.o: ..\STemWin\inc\SLIDER.h
 ..\obj\modedlg.o: ..\STemWin\inc\SPINBOX.h
+..\obj\modedlg.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\modedlg.o: ..\STemWin\inc\TEXT.h
 ..\obj\modedlg.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\modedlg.o: ..\STemWin\inc\KNOB.h
-..\obj\modedlg.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\modedlg.o: ..\HARDWARE\InterFace\interface.h

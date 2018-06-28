@@ -1,7 +1,7 @@
 #ifndef __EXAMPLE_H
 #define __EXAMPLE_H
 #include "GUI.h"
+#include "interface.h"
 
-
-void example(void); //ฒโสิด๚ย๋
+WM_HWIN example(void); //ฒโสิด๚ย๋
 #endif

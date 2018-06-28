@@ -1,7 +1,10 @@
 #include "key.h"
 #include "delay.h"
 #include "Interface.h"
+#include "led.h"
+
 #define time_over  500000  //655300
+
 
 u8 KEY_Value[][3] =
 {
@@ -34,7 +37,9 @@ void KEY_GPIO_Init(void)
     GPIO_InitTypeDef GPIO_InitStructure;
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
 
-    //配置输入模式
+	
+
+    //配置输入模式 row1,row2,row3
     GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8; //KEY1-KEY4
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; //设置成上拉输入
     GPIO_Init(GPIOC, &GPIO_InitStructure);//初始化GPIOC6,7,8,采用矩阵扫描
@@ -60,6 +65,7 @@ void KEY_GPIO_Init(void)
 
 u8 KEY_Scan(u8 mode)
 {
+	GPIO_InitTypeDef GPIO_InitStructure;
     u8 i, j;
     static u8 key_up = 1;  //按键按松开标志
     if(mode)key_up = 1;    //支持连按
@@ -111,10 +117,14 @@ u8 KEY_Scan(u8 mode)
     }
     else
     {
+		//按下了
         col1 = 0;
         col2 = 0;
         col3 = 0;
-        if(row1 == 1 && row2 == 1 && row3 == 1) key_up = 1;
+        if(row1 == 1 && row2 == 1 && row3 == 1) 
+		{
+			key_up = 1;
+		}
     }
     return 0;
 }

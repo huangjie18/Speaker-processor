@@ -34,7 +34,7 @@
 ..\obj\key.o: ..\HARDWARE\InterFace\Interface.h
 ..\obj\key.o: ..\STemWin\inc\GUI.h
 ..\obj\key.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\key.o: ..\STemWin\Config\GUIConf.h
+..\obj\key.o: ..\STemWin\inc\GUIConf.h
 ..\obj\key.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\key.o: ..\STemWin\inc\LCD.h
 ..\obj\key.o: ..\STemWin\inc\Global.h
@@ -74,7 +74,9 @@
 ..\obj\key.o: ..\STemWin\inc\RADIO.h
 ..\obj\key.o: ..\STemWin\inc\SLIDER.h
 ..\obj\key.o: ..\STemWin\inc\SPINBOX.h
+..\obj\key.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\key.o: ..\STemWin\inc\TEXT.h
 ..\obj\key.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\key.o: ..\STemWin\inc\KNOB.h
-..\obj\key.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\key.o: ..\HARDWARE\InterFace\interface.h
+..\obj\key.o: ..\HARDWARE\LED\led.h

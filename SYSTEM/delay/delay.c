@@ -131,7 +131,7 @@ void delay_init()
 	u32 reload;
 #endif
 	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);	//选择外部时钟  HCLK/8
-	fac_us=SystemCoreClock/8000000;				//为系统时钟的1/8  
+	fac_us=SystemCoreClock/8000000;				//为系统时钟的1/8  HCLK=系统时钟
 #if SYSTEM_SUPPORT_OS  							//如果需要支持OS.
 	reload=SystemCoreClock/8000000;				//每秒钟的计数次数 单位为M  
 	reload*=1000000/delay_ostickspersec;		//根据delay_ostickspersec设定溢出时间
@@ -208,19 +208,29 @@ void delay_us(u32 nus)
 //nms<=0xffffff*8*1000/SYSCLK
 //SYSCLK单位为Hz,nms单位为ms
 //对72M条件下,nms<=1864 
+//void delay_ms(u16 nms)
+//{	 		  	  
+//	u32 temp;		   
+//	SysTick->LOAD=(u32)nms*fac_ms;				//时间加载(SysTick->LOAD为24bit)
+//	SysTick->VAL =0x00;							//清空计数器
+//	SysTick->CTRL|=SysTick_CTRL_ENABLE_Msk ;	//开始倒数  
+//	do
+//	{
+//		temp=SysTick->CTRL;
+//	}while((temp&0x01)&&!(temp&(1<<16)));		//等待时间到达   
+//	SysTick->CTRL&=~SysTick_CTRL_ENABLE_Msk;	//关闭计数器
+//	SysTick->VAL =0X00;       					//清空计数器	  	    
+//} 
+
 void delay_ms(u16 nms)
-{	 		  	  
-	u32 temp;		   
-	SysTick->LOAD=(u32)nms*fac_ms;				//时间加载(SysTick->LOAD为24bit)
-	SysTick->VAL =0x00;							//清空计数器
-	SysTick->CTRL|=SysTick_CTRL_ENABLE_Msk ;	//开始倒数  
-	do
+{
+	u32 repeat=nms/1;
+	while(repeat)
 	{
-		temp=SysTick->CTRL;
-	}while((temp&0x01)&&!(temp&(1<<16)));		//等待时间到达   
-	SysTick->CTRL&=~SysTick_CTRL_ENABLE_Msk;	//关闭计数器
-	SysTick->VAL =0X00;       					//清空计数器	  	    
-} 
+		delay_us(1000);  //1ms
+		repeat--;
+	}
+}
 #endif 
 
 

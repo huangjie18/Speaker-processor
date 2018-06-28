@@ -136,6 +136,7 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] =
 static void _cbDialog(WM_MESSAGE * pMsg)
 {
     WM_HWIN hItem;
+	WM_HWIN hItemold;
     WM_HWIN hchild_check;
     int     NCode;
     int     Id;
@@ -161,6 +162,9 @@ static void _cbDialog(WM_MESSAGE * pMsg)
         LISTBOX_AddString(hItem, input_esc[INPUT_channel]);//显示Esc
 //        LISTBOX_EnableWrapMode(hItem, 1); //启用自动换行模式,会提示要删除的块已经在_Free()中
         LISTBOX_SetFont(hItem, GUI_FONT_20_1);  //设置字体
+	
+	
+		
 //
 //
 //        //设置子窗口
@@ -211,7 +215,14 @@ static void _cbDialog(WM_MESSAGE * pMsg)
             break;
         }
         break;
-		
+	case WM_PAINT:
+//		hItemold = WM_SelectWindow(WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0));
+//		GUI_DrawGradientRoundedH(35, 100, 180, 130, 5, 0x0000FF, 0x00FFFF);
+//		GUI_SetColor(GUI_BLACK);
+//		GUI_SetFont(GUI_FONT_32_1);
+//		GUI_DispStringAt("Hello world", 0, 0);
+//		WM_SelectWindow(hItemold);
+		break;
     case WM_NOTIFY_PARENT:
         Id    = WM_GetId(pMsg->hWinSrc);
         NCode = pMsg->Data.v;

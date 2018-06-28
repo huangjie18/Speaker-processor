@@ -2,7 +2,7 @@
 ..\obj\coax_face.o: ..\STemWin\inc\DIALOG.h
 ..\obj\coax_face.o: ..\STemWin\inc\WM.h
 ..\obj\coax_face.o: ..\STemWin\inc\GUI_ConfDefaults.h
-..\obj\coax_face.o: ..\STemWin\Config\GUIConf.h
+..\obj\coax_face.o: ..\STemWin\inc\GUIConf.h
 ..\obj\coax_face.o: ..\STemWin\inc\GUI_Type.h
 ..\obj\coax_face.o: ..\STemWin\inc\LCD.h
 ..\obj\coax_face.o: ..\STemWin\inc\Global.h
@@ -41,7 +41,8 @@
 ..\obj\coax_face.o: ..\STemWin\inc\RADIO.h
 ..\obj\coax_face.o: ..\STemWin\inc\SLIDER.h
 ..\obj\coax_face.o: ..\STemWin\inc\SPINBOX.h
+..\obj\coax_face.o: ..\STemWin\inc\SWIPELIST.h
 ..\obj\coax_face.o: ..\STemWin\inc\TEXT.h
 ..\obj\coax_face.o: ..\STemWin\inc\TREEVIEW.h
 ..\obj\coax_face.o: ..\STemWin\inc\KNOB.h
-..\obj\coax_face.o: ..\HARDWARE\InterFace\Interface.h
+..\obj\coax_face.o: ..\HARDWARE\InterFace\interface.h
